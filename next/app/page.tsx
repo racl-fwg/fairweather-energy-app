@@ -1,11 +1,21 @@
-// next/app/page.tsx
+import Hero from '@/components/Hero/Hero';
+import Vision from '@/components/Vision/Vision';
+import Journey from '@/components/Journey/Journey';
+import ProductRange from '@/components/ProductRange/ProductRange';
+import Testimonials from '@/components/Testimonials/Testimonials';
+import Contact from '@/components/Contact/Contact';
 
-import Hero from './components/Hero/Hero'
-
-export default function HomePage() {
+export default function Home() {
   return (
     <>
-      <Hero />
+      <main>
+        <Hero />
+        <Vision />
+        <Journey />
+        <ProductRange />
+        <Testimonials />
+        <Contact />
+      </main>
     </>
-  )
+  );
 }

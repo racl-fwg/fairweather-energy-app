@@ -1,0 +1,18 @@
+.productRange {
+    padding: 4rem 0;
+    background-color: var(--lightNeon);
+    text-align: center;
+  }
+  
+  .productRange h2 {
+    font-size: 2.5rem;
+    color: var(--nature);
+    font-weight: 600;
+  }
+  
+  .productRange p {
+    color: var(--darkNature);
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  

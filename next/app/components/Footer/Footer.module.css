@@ -1,43 +1,64 @@
-/* next/app/components/Footer/Footer.module.css */
-
 .footer {
-  background-color: #282c34;
+  background-color: var(--dark);
   color: white;
-  padding: 2rem;
-  text-align: center;
+  padding: 48px 0;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  padding: 0 16px;
 }
 
-.nav {
+.column h4 {
+  color: var(--secondary);
+  font-size: 18px;
+}
+
+.column ul {
   list-style: none;
-  display: flex;
-  gap: 1.5rem;
+  padding: 0;
 }
 
-.nav li a {
+.column ul li {
+  margin-top: 8px;
+}
+
+.column ul li a {
   color: white;
+  opacity: 0.7;
   text-decoration: none;
 }
 
-.nav li a:hover {
-  text-decoration: underline;
+.column ul li a:hover {
+  opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
 
-  .nav {
-    margin-top: 1rem;
-  }
+.button {
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #d8e455;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 12px;
+  opacity: 0.7;
 }

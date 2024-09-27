@@ -1,50 +1,37 @@
-// app/components/Hero/Hero.tsx
-
-'use client'
-
-import styles from './Hero.module.css'
-
-// Define the hover colors: vibrant pink, mellow green, and blue
-const hoverColors = ['#ff00ff', '#00ffcc', '#61dafb'] // Pink, Green, Blue
+import Image from 'next/image';
 
 export default function Hero() {
-  // Create random clusters of grid items
-  const createGrid = () => {
-    const gridClusters = []
-    const shapes = ['square', 'circle', 'triangle']
-
-    // Generate 100 random clusters (each cluster has a random number of items)
-    for (let i = 0; i < 100; i++) {
-      const clusterSize = Math.floor(Math.random() * 5) + 1 // Random cluster size between 1 and 5
-      const clusterColor = hoverColors[Math.floor(Math.random() * hoverColors.length)] // Pick a random hover color
-
-      const clusterItems = []
-      for (let j = 0; j < clusterSize; j++) {
-        const randomShape = shapes[Math.floor(Math.random() * shapes.length)]
-        clusterItems.push(
-          <div
-            key={`${i}-${j}`}
-            className={`${styles.gridItem} ${styles[randomShape]}`}
-            style={{ '--hover-color': clusterColor }} // Set the random hover color using a CSS variable
-          ></div>
-        )
-      }
-
-      gridClusters.push(
-        <div key={i} className={styles.cluster}>
-          {clusterItems}
-        </div>
-      )
-    }
-
-    return gridClusters
-  }
-
   return (
-    <section className={styles.hero}>
-      <div className={styles.grid}>
-        {createGrid()}
+    <section className="relative w-full h-[75vh]"> {/* Adjust height to 3/4 of full screen */}
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero.png" // Path to your hero background image
+          alt="Solar Power"
+          layout="fill"
+          objectFit="cover"
+          priority={true} // Ensures this image loads with priority
+        />
+      </div>
+
+      {/* Text and Logotype Overlay */}
+      <div className="relative z-10 h-full flex flex-col justify-center items-start px-8 lg:px-24"> {/* Reduce left margin to lg:px-24 */}
+        {/* Text */}
+        <h1 className="text-[#E9FF66] text-5xl md:text-6xl lg:text-7xl font-medium font-['Manrope'] leading-tight max-w-3xl"> {/* Adjust to max-w-3xl to reduce line breaks */}
+          Solar power for a sustainable future with sunlight shaping our tomorrow
+        </h1>
+
+        {/* Energy Logotype */}
+        <div className="absolute bottom-8 left-16 w-1/2"> {/* Adjusted to left-16 to reduce left margin */}
+          <Image
+            src="/logotypes/Energy_Logotype_Energy_RGB.png" // Path to your Energy logotype
+            alt="Energy"
+            layout="responsive"
+            width={800} // Adjust width to ensure half screen width
+            height={200} // Adjust height accordingly to keep proportion
+          />
+        </div>
       </div>
     </section>
-  )
+  );
 }

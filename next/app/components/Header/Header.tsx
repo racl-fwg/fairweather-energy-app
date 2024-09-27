@@ -1,47 +1,36 @@
-// app/components/Header/Header.tsx
-
-'use client'
-
-import { useSession, signIn, signOut } from 'next-auth/react'
-import styles from './Header.module.css'
-import Link from 'next/link'
+import Image from 'next/image';
+import styles from './Header.module.css';
 
 export default function Header() {
-  const { data: session } = useSession()
-
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.logo}>
-          <Link href="/">FAIRWEATHER Energy</Link>
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-[#feffeb] rounded-full shadow-lg z-20 py-4 px-8 font-['Manrope']">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <div className="logo">
+          <Image
+            src="/logotypes/Fairweather_Main_Logotype_Nature_RGB.svg"
+            alt="Fairweather"
+            width={160}
+            height={40}
+          />
         </div>
-        <nav className={styles.nav}>
-          <ul className={styles.navLinks}>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
+
+        {/* Navigation */}
+        <nav className="flex space-x-6">
+          <a href="#about" className="text-[#003317] text-lg font-medium">Om oss</a>
+          <a href="#why" className="text-[#003317] text-lg font-medium">Varför Fairweather Energy</a>
+          <a href="#segments" className="text-[#003317] text-lg font-medium">Kundsegment</a>
+          <a href="#solutions" className="text-[#003317] text-lg font-medium">Lösningar</a>
+          <a href="#sustainability" className="text-[#003317] text-lg font-medium">Hållbarhet</a>
         </nav>
-        <div className={styles.auth}>
-          {session ? (
-            <>
-              <p className={styles.user}>Hello, {session.user?.name}!</p>
-              {/* Dashboard button */}
-              <Link href="/dashboard">
-                <button className={styles.authButton}>Dashboard</button>
-              </Link>
-              {/* Sign Out button */}
-              <button onClick={() => signOut()} className={styles.authButton}>
-                Sign Out
-              </button>
-            </>
-          ) : (
-            <button onClick={() => signIn()} className={styles.authButton}>
-              Sign In
-            </button>
-          )}
+
+        {/* Get a Quote Button */}
+        <div className="quote-btn">
+          <a href="#quote" className="bg-[#003317] text-[#E9FF66] py-2 px-6 rounded-full text-lg">
+            Få en offert
+          </a>
         </div>
       </div>
     </header>
-  )
+  );
 }

@@ -1,26 +1,24 @@
-// next/app/layout.tsx
+import './globals.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
-'use client' // Mark it as a client-side component
-
-import { SessionProvider } from 'next-auth/react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import './globals.css'
+export const metadata = {
+  title: 'Fairweather Energy',
+  description: 'Empowering the Future with Sustainable Energy Solutions',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>
-        <SessionProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </SessionProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }
