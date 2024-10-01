@@ -95,3 +95,4 @@ next-env.d.ts
 
 # Ignore debugging logs from Next.js
 .next/cache/
+next/.next/cache
