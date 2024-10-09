@@ -4,11 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom global styles */
 body {
-  font-family: 'Manrope', sans-serif; /* Custom font */
+  font-family: 'Manrope', sans-serif; /* Apply the Manrope font family globally */
 }
 
+/* Define custom Tailwind utility classes */
 @layer utilities {
+  /* Custom background colors */
   .bg-lightNeon {
-    background-color: #FEFFEB; /* Define your custom lightNeon color */
+    background-color: #FEFFEB; /* Custom lightNeon background color */
   }
+
+  /* Add other custom styles if needed */
+  .text-darkNature {
+    color: #002311; /* Custom darkNature text color */
+  }
+
+  .bg-darkNature {
+    background-color: #002311; /* Custom darkNature background color */
+  }
+
+  .fill-nature {
+    fill: #003317; /* Custom fill color */
+  }
+}
