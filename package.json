@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "ts-node ./tailwind.config.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@types/react-responsive": "^8.0.8",
