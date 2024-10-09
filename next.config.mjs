@@ -1,16 +1,9 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['localhost', 'fairweather.energy'], // Include production domain
+    domains: ['localhost', 'fairweather.energy'],
   },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']  // Allow SVGs to be used as React components
-    });
-    return config;
-  }
-}
+};
 
-module.exports = nextConfig;
+export default nextConfig;
