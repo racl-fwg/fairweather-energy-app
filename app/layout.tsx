@@ -17,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-lightNeon">
+        <QuoteProvider>
           <HeaderContainer />
           <main className="no-top-padding">{children}</main>
           <Footer />
+        </QuoteProvider>
       </body>
     </html>
   );
