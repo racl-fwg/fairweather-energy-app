@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 body {
-  @apply bg-lightNeon; /* Background color for the entire site */
   font-family: 'Manrope', sans-serif; /* Custom font */
 }
 
-.text-lg{
-  size: 1rem
-}
+@layer utilities {
+  .bg-lightNeon {
+    background-color: #FEFFEB; /* Define your custom lightNeon color */
+  }
