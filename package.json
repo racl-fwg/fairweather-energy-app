@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "ts-node ./tailwind.config.ts"
   },
   "dependencies": {
     "@types/react-responsive": "^8.0.8",
@@ -36,6 +37,7 @@
     "postcss": "^8.4.47",
     "rimraf": "^4.4.0",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ts-node": "^10.9.1"
   }
 }
