@@ -1,30 +1,8 @@
-module.exports = {
-    content: [
-      './app/**/*.{js,ts,jsx,tsx,mdx}',
-      './pages/**/*.{js,ts,jsx,tsx,mdx}',
-      './components/**/*.{js,ts,jsx,tsx,mdx}'
-    ],
-    theme: {
-      extend: {
-        colors: {
-          energy: '#E9FF66',
-          nature: '#003317',
-          darkNature: '#002311',
-          lightNeon: '#FEFFEB',
-          black: '#000000',
-          white: '#FFFFFF'
-        },
-        textColor: {
-          DEFAULT: '#002311',
-        },
-        fill: {
-          DEFAULT: '#003317',
-        },
-        fontFamily: {
-          manrope: ['Manrope', 'sans-serif'],
-        }
+{
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
       }
-    },
-    plugins: [],
-  };
+    }
+  }
   
