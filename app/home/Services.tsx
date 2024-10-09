@@ -78,7 +78,7 @@ export default function Services() {
           {/* Graphic Image */}
           <div className="flex justify-center">
             <Image
-              src="/images/service-graphic.png"
+              src="/images/home/service-graphic.png"
               alt="Battery Service Graphic"
               width={900}
               height={200}
