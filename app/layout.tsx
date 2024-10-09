@@ -16,12 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-lightNeon text-nature">
-        <QuoteProvider>
+      <body className="bg-lightNeon">
           <HeaderContainer />
           <main className="no-top-padding">{children}</main>
           <Footer />
-        </QuoteProvider>
       </body>
     </html>
   );
