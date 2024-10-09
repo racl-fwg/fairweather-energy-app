@@ -1,6 +1,8 @@
+// app/layout.tsx or any root-level layout component
 import './globals.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
+import { QuoteProvider } from './context/QuouteContext';
 
 export const metadata = {
   title: 'Fairweather Energy',
@@ -15,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-lightNeon text-nature">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QuoteProvider>
+          <HeaderContainer />
+          <main className="no-top-padding">{children}</main>
+          <Footer />
+        </QuoteProvider>
       </body>
     </html>
   );

@@ -1,10 +1,11 @@
-import Hero from '@/components/Hero/Hero';
-import Vision from '@/components/Vision/Vision';
-import Services from './components/Services/Services';
-import HelpSection from './components/HelpSection/HelpSection';
-import Products from '@/components/Products/Products';
-import Testimonials from '@/components/Testimonials/Testimonials';
-import Quote from './components/Quote/Quote';
+import Hero from '@/home/Hero';
+import Vision from '@/home/Vision';
+import Services from '@/home/Services';
+import HelpSection from '@/home/HelpSection';
+import Products from '@/home/Products';
+import Testimonials from '@/home/Testimonials';
+import Contact from './components/Contact/Contact';
+import React from 'react';
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <HelpSection />
         <Products />
         <Testimonials />
-        <Quote />
+        <Contact />
       </main>
     </>
   );
