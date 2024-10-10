@@ -8,12 +8,10 @@ import React from 'react';
 
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [hasRoundedCorners, setHasRoundedCorners] = useState(true);
 
   useEffect(() => {
     if (activeMenu) {
-      setIsAnimating(true);
       setHasRoundedCorners(false); // Remove bottom corners when expansion starts
     }
   }, [activeMenu]);
@@ -25,9 +23,9 @@ export default function Header() {
         {/* Main Header */}
         <header
           className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-lightNeon shadow-lg py-4 px-8 font-['Manrope'] hidden lg:flex transition-all duration-300 ease-in-out ${
-            activeMenu ? "rounded-t-full rounded-b-none" : "rounded-full"
+            activeMenu ? 'rounded-t-full rounded-b-none' : 'rounded-full'
           }`}
-          style={{ height: "72px" }}
+          style={{ height: '72px' }}
         >
           <div className="flex justify-between items-center w-full">
             {/* Logo */}
@@ -51,13 +49,13 @@ export default function Header() {
               {/* Products Dropdown Button */}
               <button
                 className={`text-darkNature text-lg font-medium ${
-                  activeMenu === "Produkter" ? "border-b-2 border-darkNature" : ""
+                  activeMenu === 'Produkter' ? 'border-b-2 border-darkNature' : ''
                 }`}
                 onClick={() => {
-                  if (activeMenu === "Produkter") {
+                  if (activeMenu === 'Produkter') {
                     setActiveMenu(null);
                   } else {
-                    setActiveMenu("Produkter");
+                    setActiveMenu('Produkter');
                   }
                 }}
               >
@@ -67,13 +65,13 @@ export default function Header() {
               {/* Services Dropdown Button */}
               <button
                 className={`text-darkNature text-lg font-medium ${
-                  activeMenu === "Tjänster" ? "border-b-2 border-darkNature" : ""
+                  activeMenu === 'Tjänster' ? 'border-b-2 border-darkNature' : ''
                 }`}
                 onClick={() => {
-                  if (activeMenu === "Tjänster") {
+                  if (activeMenu === 'Tjänster') {
                     setActiveMenu(null);
                   } else {
-                    setActiveMenu("Tjänster");
+                    setActiveMenu('Tjänster');
                   }
                 }}
               >
@@ -100,7 +98,6 @@ export default function Header() {
         <DropdownWrapper
           isOpen={activeMenu !== null}
           onAnimationComplete={() => {
-            setIsAnimating(false);
             if (!activeMenu) {
               setHasRoundedCorners(true); // Bring back the rounded corners after retraction completes
             }
@@ -108,43 +105,24 @@ export default function Header() {
         >
           <div
             className={`flex justify-between items-start w-full px-16 py-12 transition-all duration-500 ease-in-out ${
-              activeMenu ? "max-h-[400px] opacity-100 transform translate-y-0" : "max-h-0 opacity-0 -translate-y-4"
+              activeMenu ? 'max-h-[400px] opacity-100 transform translate-y-0' : 'max-h-0 opacity-0 -translate-y-4'
             }`}
-            style={{ overflow: "hidden", borderRadius: hasRoundedCorners ? "32px" : "0px 0px 32px 32px" }}
-            onTransitionEnd={() => {
-              if (!activeMenu) setIsAnimating(false);
-            }}
+            style={{ overflow: 'hidden', borderRadius: hasRoundedCorners ? '32px' : '0px 0px 32px 32px' }}
           >
             {/* Dropdown Content for Products */}
             <div className="flex flex-col w-full space-y-4">
               <h3 className="text-3xl text-darkNature font-semibold">{activeMenu}</h3>
-              {activeMenu === "Produkter" && (
+              {activeMenu === 'Produkter' && (
                 <div className="grid grid-cols-2 gap-8">
-                  <DropdownLink
-                    href="/products/huawei"
-                    label="Huawei"
-                    imageSrc="/images/products/huawei-preview.png"
-                  />
-                  <DropdownLink
-                    href="/products/pixii"
-                    label="Pixii"
-                    imageSrc="/images/products/pixii-preview.png"
-                  />
-                  <DropdownLink
-                    href="/products/emaldo"
-                    label="Emaldo"
-                    imageSrc="/images/products/emaldo-preview.png"
-                  />
-                  <DropdownLink
-                    href="/products/saj"
-                    label="SAJ"
-                    imageSrc="/images/products/saj-preview.png"
-                  />
+                  <DropdownLink href="/products/huawei" label="Huawei" imageSrc="/images/products/huawei-preview.png" />
+                  <DropdownLink href="/products/pixii" label="Pixii" imageSrc="/images/products/pixii-preview.png" />
+                  <DropdownLink href="/products/emaldo" label="Emaldo" imageSrc="/images/products/emaldo-preview.png" />
+                  <DropdownLink href="/products/saj" label="SAJ" imageSrc="/images/products/saj-preview.png" />
                 </div>
               )}
 
               {/* Dropdown Content for Services */}
-              {activeMenu === "Tjänster" && (
+              {activeMenu === 'Tjänster' && (
                 <div className="grid grid-cols-2 gap-8">
                   <DropdownLink href="/services/auxiliary-services" label="Stödtjänster" />
                   <DropdownLink href="/services/services#installation" label="Installation" />
@@ -160,7 +138,6 @@ export default function Header() {
   );
 }
 
-// Add the missing DropdownLink component here
 const DropdownLink = ({
   href,
   label,
@@ -170,17 +147,11 @@ const DropdownLink = ({
   label: string;
   imageSrc?: string;
 }) => (
-  <Link href={href} className="flex items-center space-x-4 py-4 px-2 text-darkNature hover:bg-gray-100 rounded-md transition-all duration-300">
-    {/* Image Preview */}
-    {imageSrc && (
-      <Image
-        src={imageSrc}
-        alt={`${label} preview`}
-        width={50}
-        height={50}
-        className="rounded-md"
-      />
-    )}
+  <Link
+    href={href}
+    className="flex items-center space-x-4 py-4 px-2 text-darkNature hover:bg-gray-100 rounded-md transition-all duration-300"
+  >
+    {imageSrc && <Image src={imageSrc} alt={`${label} preview`} width={50} height={50} className="rounded-md" />}
     <span className="text-lg font-medium">{label}</span>
   </Link>
 );

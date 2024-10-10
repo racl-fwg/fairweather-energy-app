@@ -37,7 +37,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       text6__1: propertyType, // Fastighetstyp (Property Type dropdown)
       text8__1: phone, // Telefonnummer (Phone field)
       text4__1: `${interestedIn.solceller ? 'Solceller' : ''}${interestedIn.batterier ? ', Batterier' : ''}`, // Intresserad av (Interested In)
+      text_message__1: message || "", // Add the message field here (update with appropriate column ID)
     };
+    
 
     // Build the GraphQL query for creating the item
     const query = `
