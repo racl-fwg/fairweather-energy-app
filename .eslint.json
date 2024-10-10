@@ -2,7 +2,11 @@
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "warn",  
+    "@typescript-eslint/no-unused-vars": [
+      "warn", 
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" } 
+    ],
     "prettier/prettier": [
       "error",
       {
