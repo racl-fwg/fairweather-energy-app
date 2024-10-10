@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch Next.js App",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+        "args": ["dev"],
+        "preLaunchTask": "npm: build",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "node",
+        "runtimeArgs": [],
+        "envFile": "${workspaceFolder}/.env.local",
+        "env": {
+          "NEXT_PUBLIC_API_URL": "http://localhost:3000/api",
+          "NODE_ENV": "development"
+        },
+        "outputCapture": "std",
+        "console": "integratedTerminal",
+        "skipFiles": ["<node_internals>/**", "**/node_modules/**"]
+      },
+      {
+        "name": "Attach to Node Process",
+        "type": "node",
+        "request": "attach",
+        "processId": "${command:PickProcess}",
+        "skipFiles": ["<node_internals>/**", "**/node_modules/**"]
+      }
+    ]
+  }
+  

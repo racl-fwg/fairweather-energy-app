@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "npm: dev",
+        "type": "npm",
+        "script": "dev",
+        "isBackground": true,
+        "problemMatcher": [],
+        "detail": "Starts the Next.js development server"
+      },
+      {
+        "label": "npm: build",
+        "type": "npm",
+        "script": "build",
+        "detail": "Builds the Next.js application for production"
+      },
+      {
+        "label": "npm: start",
+        "type": "npm",
+        "script": "start",
+        "detail": "Starts the Next.js application in production mode"
+      }
+    ]
+  }
+  

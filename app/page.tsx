@@ -1,18 +1,24 @@
+import Hero from '@/home/Hero';
+import Vision from '@/home/Vision';
+import Services from '@/home/Services';
+import HelpSection from '@/home/HelpSection';
+import Products from '@/home/Products';
+import Testimonials from '@/home/Testimonials';
+import Contact from './components/Contact/Contact';
 import React from 'react';
-import HeroComponent from '@/components/Hero/HeroInContainerProp'; // Ensure correct component import
 
-const ServicesPageWrapper: React.FC = () => {
+export default function Home() {
   return (
-    <div className="mb-16">
-      <HeroComponent
-        header="Fairweather Energy"
-        subHeader="Page coming soon!"
-        imageSrc="/images/webfactory-ltd-NoOrDKxUfzo-unsplash.jpg" // Use the same image as Pixii
-        buttonText="Learn More"
-        buttonLink="/"
-      />
-    </div>
+    <>
+      <main>
+        <Hero />
+        <Vision />
+        <Services />
+        <HelpSection />
+        <Products />
+        <Testimonials />
+        <Contact />
+      </main>
+    </>
   );
-};
-
-export default ServicesPageWrapper;
+}
