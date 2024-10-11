@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -53,27 +54,31 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-start text-lightNeon">
           {/* Logo Section */}
           <div className="flex justify-center lg:justify-start col-span-2 lg:col-span-1">
-            <Image
-              src="/logotypes/Fairweather_Symbol_Energy_RGB.png"
-              alt="Fairweather Energy Logo"
-              width={80}
-              height={80}
-              className="mb-4 md:mb-0"
-            />
+            <Link href="/">
+              <Image
+                src="/logotypes/Fairweather_Symbol_Energy_RGB.png"
+                alt="Fairweather Energy Logo"
+                width={80}
+                height={80}
+                className="mb-4 md:mb-0 cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Om oss */}
           <div className="flex flex-col space-y-1 text-sm">
             <h3 className="font-bold text-energy">Om oss</h3>
-            <a href="#about" className="hover:text-white">Fairweather Energy</a>
-            <a href="#" className="hover:text-white">Kontakt</a>
-            <a href="#" className="hover:text-white">Hållbarhet</a>
+            <Link href="/about" className="hover:text-white">Fairweather Energy</Link>
+            <Link href="/about#contact" className="hover:text-white">Kontakt</Link>
+            <Link href="/sustainability" className="hover:text-white">Hållbarhet</Link>
           </div>
 
           {/* Tjänster */}
           <div className="flex flex-col space-y-1 text-sm">
             <h3 className="font-bold text-energy">Tjänster</h3>
-            <a href="#" className="hover:text-white">Stödtjänster</a>
+            <Link href="/services/auxiliary-services" className="hover:text-white">Stödtjänster</Link>
+            <Link href="/services/retrofit" className="hover:text-white">Retrofitting</Link>
+            <Link href="/services/consultation" className="hover:text-white">Konsultation</Link>
           </div>
 
           {/* Kontakta oss */}
@@ -88,16 +93,16 @@ export default function Footer() {
           {/* Produkter */}
           <div className="flex flex-col space-y-1 text-sm">
             <h3 className="font-bold text-energy">Produkter</h3>
-            <a href="#" className="hover:text-white">Huawei</a>
-            <a href="#" className="hover:text-white">Pixii</a>
-            <a href="#" className="hover:text-white">SAJ</a>
-            <a href="#" className="hover:text-white">Emaldo</a>
+            <Link href="/products/huawei" className="hover:text-white">Huawei</Link>
+            <Link href="/products/pixii" className="hover:text-white">Pixii</Link>
+            <Link href="/products/saj" className="hover:text-white">SAJ</Link>
+            <Link href="/products/emaldo" className="hover:text-white">Emaldo</Link>
           </div>
         </div>
 
         {/* Newsletter Section */}
         <div className="text-lightNeon text-sm flex flex-col items-center space-y-4">
-          <h3 className="text-base font-bold">Vill få de senaste nyheterna?</h3>
+          <h3 className="text-base font-bold">Vill du få de senaste nyheterna?</h3>
           <form onSubmit={handleNewsletterSubmit} className="flex flex-col items-center space-y-4 w-full max-w-sm">
             <input
               type="email"
@@ -127,17 +132,19 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large ENERGY Background Logo */}
+      {/* Large ENERGY Background Logo with Link */}
       <div className="absolute bottom-0 left-0 w-screen z-0 pointer-events-none">
-        <Image
-          src="/logotypes/footer_logo.png"
-          alt="Energy Logo Background"
-          layout="responsive"
-          width={2500}
-          height={500}
-          className="object-contain w-full"
-          priority
-        />
+        <Link href="/">
+          <Image
+            src="/logotypes/footer_logo.png"
+            alt="Energy Logo Background"
+            width={2500}
+            height={500}
+            style={{ objectFit: 'contain' }}
+            className="cursor-pointer"
+            priority
+          />
+        </Link>
       </div>
     </footer>
   );

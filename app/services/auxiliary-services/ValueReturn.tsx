@@ -1,5 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 
 const ValueReturn: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const ValueReturn: React.FC = () => {
     >
       {/* Content Container with Flex Properties */}
       <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-8">
+        
         {/* Left Text Section */}
         <div className="text-white max-w-lg lg:w-[45%] flex-grow flex flex-col justify-between">
           <h2 className="text-3xl font-bold text-energy mb-4">
@@ -27,7 +29,7 @@ const ValueReturn: React.FC = () => {
             Batterier som deltar på marknaden bidrar inte bara till ökad lönsamhet för ägare, utan också till ökad stabilitet för hela elsystemet.
           </p>
           <p className="text-xs text-white mt-auto">
-            Beräknad förtjänst: 
+            Beräknad förtjänst:
             <a
               href="https://mimer.svk.se/PrimaryRegulation/PrimaryRegulationIndex"
               className="underline text-energy ml-1"
@@ -49,9 +51,11 @@ const ValueReturn: React.FC = () => {
               <Image
                 src="/images/auxiliary-services/Chart_2022.png"
                 alt="Chart 2022"
-                layout="fill"
-                objectFit="contain"
-                objectPosition="center"
+                fill
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
               />
             </div>
           </div>
@@ -66,9 +70,11 @@ const ValueReturn: React.FC = () => {
               <Image
                 src="/images/auxiliary-services/Chart_2023.png"
                 alt="Chart 2023"
-                layout="fill"
-                objectFit="contain"
-                objectPosition="center"
+                fill
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "center",
+                }}
               />
             </div>
           </div>

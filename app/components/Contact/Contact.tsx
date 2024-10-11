@@ -67,8 +67,6 @@ export default function Contact() {
         className="relative bg-cover bg-center h-[900px] md:h-[800px] lg:h-[700px] rounded-2xl mx-auto max-w-7xl overflow-hidden shadow-lg flex items-center justify-center"
         style={{ backgroundImage: "url('/images/home/Contact_3D_background.png')" }}
       >
-        {/* Dark Overlay for Better Contrast */}
-        <div className="absolute inset-0 bg-darkNature bg-opacity-70"></div>
 
         {/* Form Content Wrapper */}
         <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-let">

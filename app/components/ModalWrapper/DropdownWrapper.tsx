@@ -44,6 +44,7 @@ const DropdownWrapper: React.FC<DropdownWrapperProps> = ({ isOpen, children, onA
         if (!isOpen) setVisible(false); // Hide the dropdown completely after the animation
         if (onAnimationComplete) onAnimationComplete(); // Callback to signal the end of animation
       }}
+      onClick={(e) => e.stopPropagation()} // Prevent clicks inside the dropdown from bubbling up
     >
       {children}
     </div>,
