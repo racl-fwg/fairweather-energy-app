@@ -1,30 +1,43 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import ServiceCards from '@/components/ServiceCards/ServiceCards';
-import { motion } from 'framer-motion';
-import { headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
+import React from "react";
+import Image from "next/image";
+import ServiceCards from "@/components/ServiceCards/ServiceCards";
+import { motion } from "framer-motion";
+import { headerTextFadeIn, defaultTextFadeIn } from "@/components/utils/animations";
+
+// Define the Card type to match the expected structure
+interface Card {
+  imageSrc: string;
+  title: string;
+  description: string;
+  buttonType: "quote" | "arrow"; // Use specific string literals for type safety
+  buttonText?: string;
+  buttonHref?: string;
+}
 
 export default function Services() {
   // Data for the service cards
-  const cards = [
+  const cards: Card[] = [
     {
       imageSrc: "/images/home/Home_battery_units.png",
       title: "Hemmabatterier",
-      description: "Som villaägare kan du lagra solel, köpa billig el för användning vid högre priser, eller delta i stödtjänster och bidra till elnätets stabilitet.",
-      buttonType: "quote",
+      description:
+        "Som villaägare kan du lagra solel, köpa billig el för användning vid högre priser, eller delta i stödtjänster och bidra till elnätets stabilitet.",
+      buttonType: "quote", // Use literal "quote" instead of a generic string
     },
     {
       imageSrc: "/images/home/Energy_storage_container.png",
       title: "Industribatterier",
-      description: "Industribatterier möjliggör lagring av överskottsel, optimering av energianvändning och minskade kostnader genom att utnyttja el när priserna är som lägst.",
-      buttonType: "quote",
+      description:
+        "Industribatterier möjliggör lagring av överskottsel, optimering av energianvändning och minskade kostnader genom att utnyttja el när priserna är som lägst.",
+      buttonType: "quote", // Use literal "quote"
     },
     {
       imageSrc: "/images/home/Office_meeting_scene.png",
       title: "Konsultation",
-      description: "Vi erbjuder konsultation inför din planerade installation. Vi hjälper dig utvärdera dina förutsättningar och guidar dig till den bästa möjliga lösningen.",
-      buttonType: "arrow",
+      description:
+        "Vi erbjuder konsultation inför din planerade installation. Vi hjälper dig utvärdera dina förutsättningar och guidar dig till den bästa möjliga lösningen.",
+      buttonType: "arrow", // Use literal "arrow"
       buttonText: "Kontakta oss",
       buttonHref: "#contact",
     },
