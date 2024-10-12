@@ -33,14 +33,26 @@ export default function Footer() {
       });
 
       if (response.ok) {
-        setMessage('Tack för att du prenumererar på vårt nyhetsbrev!');
+        const successMessage = process.env.NEXT_PUBLIC_DEBUG === 'true'
+          ? 'Debug: Email added successfully to the newsletter!'
+          : 'Tack för att du prenumererar på vårt nyhetsbrev!';
+        
+        setMessage(successMessage);
         setEmail('');
       } else {
         const errorData = await response.json();
-        setMessage(`Något gick fel: ${errorData.message}`);
+        const errorMessage = process.env.NEXT_PUBLIC_DEBUG === 'true'
+          ? `Error: ${errorData.message}`
+          : 'Något gick fel. Försök igen senare.';
+
+        setMessage(errorMessage);
       }
-    } catch {
-      setMessage('Något gick fel vid anslutning till servern.');
+    } catch (error) {
+      const errorMessage = process.env.NEXT_PUBLIC_DEBUG === 'true'
+        ? `Error connecting to the server: ${error}`
+        : 'Något gick fel vid anslutning till servern.';
+
+      setMessage(errorMessage);
     } finally {
       setIsLoading(false);
     }
