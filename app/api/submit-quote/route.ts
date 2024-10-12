@@ -97,12 +97,20 @@ export async function POST(req: Request) {
     }
 
     // Send a successful response back to the client
-    return NextResponse.json({ message: DEBUG ? 'Item created successfully in Monday.com' : 'Tack för din förfrågan! Vi återkommer snart.', itemId: data.data.create_item.id });
+    return NextResponse.json({
+      message: DEBUG ? 'Item created successfully in Monday.com' : 'Tack för din förfrågan! Vi återkommer snart.',
+      itemId: data.data.create_item.id
+    });
 
   } catch (error) {
-    console.error('Error in API request:', error);
+    // Safely handle the error
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+    console.error('Error in API request:', errorMessage);
+
     return NextResponse.json(
-      { message: DEBUG ? `Internal server error: ${error.message}` : 'Något gick fel vid anslutning till servern.' },
+      {
+        message: DEBUG ? `Internal server error: ${errorMessage}` : 'Något gick fel vid anslutning till servern.'
+      },
       { status: 500 }
     );
   }
