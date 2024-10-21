@@ -28,7 +28,6 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState(false); // Control form display
   const [displaySuccess, setDisplaySuccess] = useState(false); // Control success message display
-  const [isSubmitting, setIsSubmitting] = useState(false); // To prevent double submission
 
   // Handle form changes
   const handleChange = (
@@ -53,20 +52,12 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Prevent double submission
-    if (isSubmitting) {
-      return;
-    }
-
-    setIsSubmitting(true); // Set the flag to indicate the form is being submitted
-
     // Clear previous messages
     setFormError('');
 
     // Check for required fields
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
       setFormError('Vänligen fyll i alla obligatoriska fält.');
-      setIsSubmitting(false); // Reset the flag
       return;
     }
 
@@ -92,8 +83,6 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
       }
     } catch (error) {
       setFormError('Kunde inte skicka meddelandet. Försök igen senare.');
-    } finally {
-      setIsSubmitting(false); // Reset the flag after the form is submitted
     }
   };
 
@@ -248,8 +237,8 @@ const QuoteForm: React.FC<QuoteFormProps> = ({ onClose }) => {
           <button type="button" onClick={onClose} className="text-red-500">
             Avbryt
           </button>
-          <button type="submit" className="bg-[#003317] text-[#E9FF66] py-2 px-4 rounded" disabled={isSubmitting}>
-            {isSubmitting ? 'Skickar...' : 'Skicka'}
+          <button type="submit" className="bg-[#003317] text-[#E9FF66] py-2 px-4 rounded">
+            Skicka
           </button>
         </div>
       </form>

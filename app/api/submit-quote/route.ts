@@ -13,23 +13,10 @@ const GROUP_ID = 'ny_grupp__1'; // Group ID for "Offertleads"
 // Check the debug flag (set to true for development)
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG === 'true';
 
-let isSubmitting = false; // Track form submission state
-
 export async function POST(req: Request) {
-  console.log('Handling API request...');
-
-  // Prevent double submissions
-  if (isSubmitting) {
-    console.warn('Form is already being submitted.');
-    return NextResponse.json(
-      { message: 'Formuläret håller redan på att skickas, vänligen vänta.' },
-      { status: 429 } // HTTP 429: Too Many Requests (indicates the form is still being submitted)
-    );
-  }
+  console.log('Handling API request...'); // Ensure this logs only once per form submission
 
   try {
-    isSubmitting = true; // Set the flag to prevent re-submission
-
     // Extract form data from the request body
     const {
       firstName,
@@ -45,7 +32,6 @@ export async function POST(req: Request) {
 
     // Validate required fields
     if (!firstName || !lastName || !email || !phone) {
-      isSubmitting = false; // Reset the flag if validation fails
       return NextResponse.json(
         { message: DEBUG ? 'First Name, Last Name, Email, and Phone are required.' : 'Fyll i alla obligatoriska fält.' },
         { status: 400 }
@@ -83,13 +69,8 @@ export async function POST(req: Request) {
           board_id: ${BOARD_ID},
           group_id: "${GROUP_ID}",
           item_name: "${firstName} ${lastName}",
-          column_values: "${JSON.stringify(columnValues).replace(/"/g, '\\"')}"
-        ) {
-          id
-          name
-        }
-      }
-    `;
+          column_values: "${JSON.stringify(columnValues).replace(/"/g, '\\"')}"`
+    ;
 
     // Send the query to the Monday.com API
     const response = await fetch(MONDAY_API_URL, {
@@ -106,7 +87,6 @@ export async function POST(req: Request) {
     // Check for errors in the response from Monday.com
     if (data.errors) {
       console.error('Error creating item in Monday:', data.errors);
-      isSubmitting = false; // Reset the flag in case of an error
       return NextResponse.json(
         { message: DEBUG ? `Error creating item in Monday.com: ${JSON.stringify(data.errors)}` : 'Något gick fel vid skickandet.' },
         { status: 500 }
@@ -114,7 +94,6 @@ export async function POST(req: Request) {
     }
 
     // Send a successful response back to the client
-    isSubmitting = false; // Reset the flag after successful submission
     return NextResponse.json({
       message: DEBUG ? 'Item created successfully in Monday.com' : 'Tack för din förfrågan! Vi återkommer snart.',
       itemId: data.data.create_item.id,
@@ -122,7 +101,6 @@ export async function POST(req: Request) {
 
   } catch (error) {
     // Safely handle the error
-    isSubmitting = false; // Reset the flag in case of an error
     const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
     console.error('Error in API request:', errorMessage);
 
