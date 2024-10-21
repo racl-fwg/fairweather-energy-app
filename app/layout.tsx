@@ -5,6 +5,7 @@ import { QuoteProvider } from './context/QuouteContext';
 import Script from 'next/script';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
+import { useEffect } from 'react';
 
 export const metadata = {
   title: 'Fairweather Energy',
@@ -16,6 +17,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Run the analytics hook only on the client
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      useGoogleAnalytics();
+    }
+  }, []); // Empty array ensures this runs only once after mounting
 
   return (
     <html lang="en">

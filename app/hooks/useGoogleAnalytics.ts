@@ -1,5 +1,5 @@
 // app/hooks/useGoogleAnalytics.ts
-"use client";
+"use client"; // This ensures it's client-side only
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -7,7 +7,8 @@ export const useGoogleAnalytics = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Prevent running in SSR
+    // Prevent this effect from running during server-side rendering
+    if (typeof window === 'undefined') return;
 
     const handleRouteChange = (url: string) => {
       if (typeof window.gtag === 'function') {
@@ -17,10 +18,12 @@ export const useGoogleAnalytics = () => {
       }
     };
 
+    // Listen to route changes
     router.events.on('routeChangeComplete', handleRouteChange);
 
+    // Cleanup on unmount
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router.events]); // Only rerun the effect if router.events changes
 };
