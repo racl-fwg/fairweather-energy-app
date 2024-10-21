@@ -90,7 +90,7 @@ export default function Footer() {
             <h3 className="font-bold text-energy">Tjänster</h3>
             <Link href="/services/auxiliary-services" className="hover:text-white">Stödtjänster</Link>
             <Link href="/services/retrofit" className="hover:text-white">Retrofitting</Link>
-            <Link href="/services/consultation" className="hover:text-white">Konsultation</Link>
+            <Link href="/services/services" className="hover:text-white">Tjänster</Link>
           </div>
 
           {/* Kontakta oss */}

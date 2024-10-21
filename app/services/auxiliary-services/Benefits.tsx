@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import ImageTextCardWithBenefits from '@/components/ImageTextCard/ImageTextCardWithBenefits';
+import ImageTextCardWithBenefits from '@/components/ImageTextCard/ImageCardTextOverlay';
 
 const Benefits: React.FC = () => {
   return (

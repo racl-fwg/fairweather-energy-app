@@ -108,7 +108,7 @@ export default function Header() {
               <div className="grid grid-cols-2 gap-8">
                 <DropdownLink href="/services/auxiliary-services" label="Stödtjänster" setActiveMenu={setActiveMenu} />
                 <DropdownLink href="/services/retrofit" label="Retrofit" setActiveMenu={setActiveMenu} />
-                <DropdownLink href="/services/consultation" label="Konsultation" setActiveMenu={setActiveMenu} />
+                <DropdownLink href="/services/services" label="Tjänster" setActiveMenu={setActiveMenu} />
               </div>
             )}
           </div>

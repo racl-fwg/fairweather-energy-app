@@ -1,9 +1,13 @@
-// app/components/QuoteButton/QuoteButton.tsx
+"use client";
 import React, { useState } from 'react';
 import ModalWrapper from '../ModalWrapper/ModalWrapper';
 import QuoteForm from '../QuouteForm/QuoteForm';
 
-const QuoteButton: React.FC = () => {
+interface QuoteButtonProps {
+  invertColors?: boolean; // Optional prop to enable color inversion
+}
+
+const QuoteButton: React.FC<QuoteButtonProps> = ({ invertColors = false }) => {
   const [quoteFormOpen, setQuoteFormOpen] = useState(false);
 
   return (
@@ -11,7 +15,11 @@ const QuoteButton: React.FC = () => {
       {/* Quote Button */}
       <button
         onClick={() => setQuoteFormOpen(true)}
-        className="bg-nature text-energy py-2 px-6 rounded-full font-semibold hover:bg-energy hover:text-darkNature transition duration-300"
+        className={`py-2 px-6 rounded-full font-semibold transition duration-300 ${
+          invertColors
+            ? 'bg-energy text-darkNature hover:bg-darkNature hover:text-energy'
+            : 'bg-nature text-energy hover:bg-energy hover:text-darkNature'
+        }`}
       >
         Begär offert
       </button>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const HuaweiPage: React.FC = () => {
   return (
-    <section className="py-16 bg-[#F8F8F2] relative">
+    <section className="py-16 relative">
       {/* Huawei Logo in Background */}
       <div className="absolute right-0 top-20 w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-0 opacity-10">
         <Image

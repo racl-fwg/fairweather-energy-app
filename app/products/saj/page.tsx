@@ -1,18 +1,22 @@
+// app/products/saj/page.tsx
 import React from 'react';
-import HeroComponent from '@/components/Hero/HeroInContainerProp'; // Ensure correct component import
+import SajHero from './SajHero';
+import SajAbout from './SajAbout';
+import SajProducts from './SajProduct';
 
-const SajPageWrapper: React.FC = () => {
+const SajPage: React.FC = () => {
   return (
-    <div className="mb-16">
-      <HeroComponent
-        header="SAJ"
-        subHeader="Page coming soon!"
-        imageSrc="/images/webfactory-ltd-NoOrDKxUfzo-unsplash.jpg" // Use the same image as Pixii
-        buttonText="Visit SAJ"
-        buttonLink="https://www.saj.com/"
-      />
+    <div>
+      {/* Hero Section */}
+      <SajHero />
+
+      {/* About Section */}
+      <SajAbout />
+
+      {/* Product Sections */}
+      <SajProducts />
     </div>
   );
 };
 
-export default SajPageWrapper;
+export default SajPage;

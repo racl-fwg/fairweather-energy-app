@@ -38,7 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/components/ThreeCardsLayout"  ],
   "exclude": [
     "node_modules"
   ]

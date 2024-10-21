@@ -122,25 +122,18 @@ export default function MobileHeader() {
                       Stödtjänster
                     </Link>
                     <Link
-                      href="/services/services#installation"
-                      className="block text-darkNature hover:underline"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Installation
-                    </Link>
-                    <Link
-                      href="/services/services#surveys"
-                      className="block text-darkNature hover:underline"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Undersökning
-                    </Link>
-                    <Link
-                      href="/services/services#retrofit"
+                      href="/services/retrofit"
                       className="block text-darkNature hover:underline"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Retrofitting
+                    </Link>
+                    <Link
+                      href="/services/services"
+                      className="block text-darkNature hover:underline"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Tjänster
                     </Link>
                   </div>
                 )}

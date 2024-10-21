@@ -34,7 +34,7 @@ export const animations = {
     visible: { opacity: 1, x: 0 }, // Slide to center and become visible
   },
   // Header text slides from the opposite (right) direction
-  headerTextSlideIn: {
+  headerTextFadeIn: {
     hidden: { opacity: 0, x: 60 }, // Start hidden and shifted right
     visible: { opacity: 1, x: 0 }, // Slide to center and become visible
   },
@@ -57,7 +57,7 @@ export const defaultTextFadeIn = {
 export const headerTextFadeIn = {
   initial: "hidden",
   whileInView: "visible",
-  variants: animations.headerTextSlideIn,
+  variants: animations.headerTextFadeIn,
   transition: { duration: 0.9, ease: 'easeOut' },
 };
 

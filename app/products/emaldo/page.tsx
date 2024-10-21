@@ -1,18 +1,21 @@
 import React from 'react';
-import HeroComponent from '@/components/Hero/HeroInContainerProp'; // Ensure correct component import
+import EmaldoHero from './EmaldoHero'; // Import the EmaldoHero component
+import EmaldoProduct from './EmaldoProduct'; // Import the EmaldoProduct component
+import EmaldoAbout from './EmaldoAbout';
 
-const EmaldoPageWrapper: React.FC = () => {
+const EmaldoPage: React.FC = () => {
   return (
-    <div className="mb-16">
-      <HeroComponent
-        header="Emaldo"
-        subHeader="Page coming soon!"
-        imageSrc="/images/webfactory-ltd-NoOrDKxUfzo-unsplash.jpg" // Use the same image as Pixii
-        buttonText="Visit Emaldo"
-        buttonLink="https://www.emaldo.com/"
-      />
+    <div className="space-y-16 min-h-screen bg-lightNature">
+
+      {/* Emaldo Hero Section */}
+      <EmaldoHero />
+
+      <EmaldoAbout />
+      
+      {/* Emaldo Product Carousel Section */}
+      <EmaldoProduct />
     </div>
   );
 };
 
-export default EmaldoPageWrapper;
+export default EmaldoPage;

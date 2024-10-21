@@ -1,18 +1,22 @@
+// app/products/pixii/page.tsx
+"use client";
 import React from 'react';
-import HeroComponent from '@/components/Hero/HeroInContainerProp'; // Ensure correct component import
+import PixiiHero from './PixiiHero'; // Importing the PixiiHero component
+import PixiiAbout from './PixiiAbout';
+import ProductInformation from './ProductInformation';
 
-const PixiiPageWrapper: React.FC = () => {
+const PixiiPage = () => {
   return (
-    <div className="mb-16">
-      <HeroComponent
-        header="Pixii"
-        subHeader="Page coming soon!"
-        imageSrc="/images/webfactory-ltd-NoOrDKxUfzo-unsplash.jpg"
-        buttonText="Visit Pixii"
-        buttonLink="https://www.pixii.com/"
-      />
+    <div>
+      {/* Hero Section */}
+      <PixiiHero />
+      <PixiiAbout />
+      <ProductInformation />
+      {/* Other sections or content for the Pixii product page can go here */}
+      {/* For example, additional text, image sections, product details, etc. */}
+      
     </div>
   );
 };
 
-export default PixiiPageWrapper;
+export default PixiiPage;

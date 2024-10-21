@@ -1,8 +1,8 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import ArrowButton from '@/components/Buttons/ArrowButton';
-import ArrowQuoteButton from '@/components/Buttons/ArrowQuoteButton';
+import React from "react";
+import Image from "next/image";
+import ArrowButton from "@/components/Buttons/ArrowButton";
+import ArrowQuoteButton from "@/components/Buttons/ArrowQuoteButton";
 
 interface HeroInContainerProp {
   header: string;
@@ -10,31 +10,44 @@ interface HeroInContainerProp {
   imageSrc: string;
   buttonText: string;
   buttonLink?: string; // Optional href prop for navigation
-  buttonType?: 'ArrowButton' | 'ArrowQuoteButton'; // Determines which button to render
-  textPosition?: 'bottom-left' | 'center'; // Option to change text position
+  buttonType?: "ArrowButton" | "ArrowQuoteButton"; // Determines which button to render
+  textPosition?: "bottom-left" | "center"; // Option to change text position
+  logoSrc?: string; // Optional prop for bottom-right logo
+  logoSize?: "small" | "medium" | "large" | "huge"; // Define logo size
+  openInNewTab?: boolean; // New prop to control if the link opens in a new tab
 }
 
-// Main HeroComponent
 const HeroComponent: React.FC<HeroInContainerProp> = ({
   header,
   subHeader,
   imageSrc,
   buttonText,
   buttonLink,
-  buttonType = 'ArrowButton',
-  textPosition = 'bottom-left',
+  buttonType = "ArrowButton",
+  textPosition = "bottom-left",
+  logoSrc,
+  logoSize = "small", // Default to "small" logo size
+  openInNewTab = false, // Default to not open in a new tab
 }) => {
+  // Define pixel sizes for the logo
+  const logoSizes = {
+    small: 150, // Small logo
+    medium: 300, // Medium logo
+    large: 450, // Large logo
+    huge: 600,  // Huge logo
+  };
+
+  const logoWidth = logoSizes[logoSize];
+
   return (
-    <section
-      className="relative w-full max-w-[1400px] mx-auto my-[110px] h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] rounded-2xl overflow-hidden shadow-lg z-10"
-    >
+    <section className="relative w-full max-w-[1400px] mx-auto my-[110px] h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] rounded-2xl overflow-hidden shadow-lg z-10">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={imageSrc}
           alt={header}
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
           quality={100}
         />
       </div>
@@ -42,7 +55,9 @@ const HeroComponent: React.FC<HeroInContainerProp> = ({
       {/* Content Section */}
       <div
         className={`relative z-20 h-full w-full flex flex-col ${
-          textPosition === 'bottom-left' ? 'justify-end items-start' : 'justify-center items-center'
+          textPosition === "bottom-left"
+            ? "justify-end items-start"
+            : "justify-center items-center"
         } p-6 sm:p-8 md:p-10 lg:p-14 space-y-6 bg-gradient-to-t from-black/60 to-transparent`}
       >
         {/* Header Text */}
@@ -58,12 +73,27 @@ const HeroComponent: React.FC<HeroInContainerProp> = ({
         )}
 
         {/* Render Button Based on buttonType Prop */}
-        {buttonType === 'ArrowButton' ? (
-          <ArrowButton text={buttonText} href={buttonLink} size="medium" />
+        {buttonType === "ArrowButton" ? (
+          <ArrowButton href={buttonLink} size="medium" openInNewTab={openInNewTab}>
+            {buttonText}
+          </ArrowButton>
         ) : (
           <ArrowQuoteButton />
         )}
       </div>
+
+      {/* Bottom-right Logo */}
+      {logoSrc && (
+        <div className="absolute bottom-6 right-6">
+          <Image
+            src={logoSrc}
+            alt="Logo"
+            width={logoWidth} // Use the defined size for width
+            height={logoWidth} // Keep height equal to width to maintain aspect ratio
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+      )}
     </section>
   );
 };

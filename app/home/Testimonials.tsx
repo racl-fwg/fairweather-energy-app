@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import TestimonialsCarousel from '@/components/TestimonialsCarousel/TestimonialsCarousel';
+import TestimonialsCarousel from '@/components/Carousels/TestimonialsCarousel';
 
 // Testimonials data
 const testimonialsData = [

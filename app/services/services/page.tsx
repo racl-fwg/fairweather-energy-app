@@ -1,18 +1,21 @@
-import React from 'react';
-import HeroComponent from '@/components/Hero/HeroInContainerProp'; // Ensure correct component import
+import React from "react";
+import ServicesHero from "@/services/services/ServicesHero"; // Adjust the import path as necessary
+import ServicesOverview from "@/services/services/ServicesOverview"; // Adjust the import path as necessary
+import ServicesCTA from "@/services/services/ServicesCTA"; // Adjust the import path as necessary
 
-const ServicesPageWrapper: React.FC = () => {
+const ServicesPage: React.FC = () => {
   return (
-    <div className="mb-16">
-      <HeroComponent
-        header="Services"
-        subHeader="Page coming soon!"
-        imageSrc="/images/webfactory-ltd-NoOrDKxUfzo-unsplash.jpg" // Use the same image as Pixii
-        buttonText="Learn More"
-        buttonLink="/"
-      />
+    <div>
+      {/* Hero Section */}
+      <ServicesHero />
+
+      {/* Overview Section */}
+      <ServicesOverview />
+
+      {/* CTA Section */}
+      <ServicesCTA />
     </div>
   );
 };
 
-export default ServicesPageWrapper;
+export default ServicesPage;

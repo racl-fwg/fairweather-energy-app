@@ -10,7 +10,7 @@ type ImageTextCardProps = {
   description: string;
   imageSrc: string;
   imageAlt: string;
-  imagePosition?: "left" | "right";
+  imagePosition?: "left" | "right"; // Allows left or right image positioning
   subSections?: Array<{ heading: string; content: string }>;
   overlayContent?: React.ReactNode;
   footerContent?: React.ReactNode;
@@ -23,7 +23,7 @@ const ImageTextCard: React.FC<ImageTextCardProps> = ({
   description,
   imageSrc,
   imageAlt,
-  imagePosition = "left",
+  imagePosition = "left",  // Default to "left" if not provided
   subSections,
   overlayContent,
   footerContent,
@@ -35,7 +35,7 @@ const ImageTextCard: React.FC<ImageTextCardProps> = ({
       <div
         className={`max-w-[1200px] mx-auto bg-white p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row ${
           imagePosition === "left" ? "lg:flex-row-reverse" : ""
-        } items-stretch gap-8`}
+        } items-stretch gap-8`} // Conditional flex-row-reverse based on imagePosition prop
       >
         {/* Image Container with Logo Overlay */}
         <div className="flex-1 relative">
