@@ -1,25 +1,27 @@
 // app/hooks/useGoogleAnalytics.ts
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation'; // Replaces useRouter from next/router
+"use client"; // Ensure it's client-side only
 
-const GA_TRACKING_ID = 'G-8DYQV5N47Q'; // Replace with your GA tracking ID
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+
+const GA_TRACKING_ID = 'G-8DYQV5N47Q';
 
 export const useGoogleAnalytics = (): void => {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Ensure this only runs on the client side
+    if (typeof window === 'undefined') return;
+
     const loadGAScript = (): void => {
-      // Load Google Analytics Script
       const script = document.createElement('script');
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
       script.async = true;
       document.head.appendChild(script);
 
-      // Initialize GA4
       window.dataLayer = window.dataLayer || [];
-      
       const gtag = (...args: [string, ...unknown[]]): void => {
-        window.dataLayer!.push(args); // Ensuring dataLayer is initialized and can accept arguments
+        window.dataLayer!.push(args);
       };
 
       window.gtag = window.gtag || gtag;
@@ -40,7 +42,6 @@ export const useGoogleAnalytics = (): void => {
       }
     };
 
-    // Fire a pageview event on route change
     handleRouteChange(pathname);
   }, [pathname]);
 };
