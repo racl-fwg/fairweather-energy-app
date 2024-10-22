@@ -37,8 +37,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "app/components/ThreeCardsLayout"  ],
+    ".next/types/**/*.ts",
+    "global.d.ts",  // Ensuring the global types file is included
+    "app/components/ThreeCardsLayout"  // Add this path as per your original setup
+  ],
   "exclude": [
     "node_modules"
   ]

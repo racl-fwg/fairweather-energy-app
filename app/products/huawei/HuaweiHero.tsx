@@ -12,7 +12,7 @@ const HuaweiHero: React.FC = () => {
       buttonType="ArrowButton" // Use ArrowButton for navigation
       textPosition="bottom-left" // Center the text if desired, or use 'bottom-left'
       logoSrc="/images/products/huawei/huawei_hero_logo.png"
-      logoSize="medium"
+      logoSize="small"
     />
   );
 };
