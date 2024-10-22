@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cardAnimation } from '@/components/utils/animations';
+import { cardAnimation, headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
 
 type CardProps = {
   iconSrc: string;
@@ -24,22 +24,12 @@ const ThreeCardsLayout: React.FC<ThreeCardsLayoutProps> = ({
     <div className="mb-12 text-darkNature">
       {/* Section Header and Description */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-start">
-        <motion.div
-          className="md:col-span-1"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
-          <h2 className="text-3xl font-semibold mb-4">{sectionTitle}</h2>
+        {/* Section Title */}
+        <motion.div className="md:col-span-1" {...headerTextFadeIn}>
+          <h2 className="text-3xl xl:text-4xl font-semibold mb-4">{sectionTitle}</h2>
         </motion.div>
-        <motion.div
-          className="text-lg md:col-start-2 md:col-span-2"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-        >
+        {/* Section Description */}
+        <motion.div className="text-lg md:col-start-2 md:col-span-2" {...defaultTextFadeIn}>
           <p>{sectionDescription}</p>
         </motion.div>
       </div>
@@ -49,8 +39,8 @@ const ThreeCardsLayout: React.FC<ThreeCardsLayoutProps> = ({
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="p-8 bg-white shadow-md rounded-xl relative hover:scale-105 transition-transform duration-300"
-            {...cardAnimation(0.2 + index * 0.2)} // Staggered animation
+            className="p-8 bg-white shadow-lg rounded-3xl relative"
+            {...cardAnimation(0.2 + index * 0.2)} // Staggered animation for each card
           >
             <img
               src={card.iconSrc}

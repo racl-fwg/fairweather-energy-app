@@ -25,7 +25,7 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ cards }) => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className="bg-white rounded-lg shadow-md overflow-hidden text-center p-6 flex flex-col items-center"
+          className="bg-white rounded-2xl shadow-lg overflow-hidden text-center p-6 flex flex-col items-center"
         >
           {/* Card Image */}
           <Image

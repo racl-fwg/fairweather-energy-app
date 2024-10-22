@@ -30,12 +30,12 @@ export const animations = {
   },
   // New text animation combining fade and slide from left for body text
   textSlideFadeIn: {
-    hidden: { opacity: 0, x: -60 }, // Start hidden and shifted left
+    hidden: { opacity: 0, x: -40 }, // Start hidden and shifted left
     visible: { opacity: 1, x: 0 }, // Slide to center and become visible
   },
   // Header text slides from the opposite (right) direction
   headerTextFadeIn: {
-    hidden: { opacity: 0, x: 60 }, // Start hidden and shifted right
+    hidden: { opacity: 0, x: 0 }, // Start hidden and shifted right
     visible: { opacity: 1, x: 0 }, // Slide to center and become visible
   },
   // Card entrance animation with scaling effect

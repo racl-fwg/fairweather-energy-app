@@ -6,12 +6,13 @@ const EmaldoHero = () => {
     <HeroInContainer
       header="Framtidens energilagring, idag"
       subHeader="Effektiv och pålitlig energilagring med AI"
-      imageSrc="/images/products/emaldo/emaldo_power_core_hero.png"
+      imageSrc="/images/products/emaldo/emaldo_hero.png"
       buttonText="Läs mer"
       buttonLink=""
       buttonType="ArrowButton"
       textPosition="bottom-left"
-      openInNewTab={true}
+      logoSrc="/images/products/emaldo/emaldo_logo_vit.png"
+      logoSize="huge"
     />
   );
 };

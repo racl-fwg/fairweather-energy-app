@@ -16,7 +16,7 @@ const ArrowQuoteButton: React.FC = () => {
       {/* Arrow Button Styled Quote Button */}
       <button
         onClick={toggleModal}
-        className="bg-energy text-darkNature rounded-full flex items-center justify-center space-x-2 transition-all duration-300 ease-in-out hover:bg-energy hover:text-darkNature hover:shadow-lg hover:scale-105 py-2 px-5 text-base"
+        className="bg-energy text-darkNature font-semibold rounded-full flex items-center justify-center space-x-2 transition-all duration-300 ease-in-out hover:bg-energy hover:text-darkNature hover:shadow-lg hover:scale-105 py-2 px-5 text-base"
       >
         <span>Få en fri offert</span>
         {/* Arrow icon next to text */}

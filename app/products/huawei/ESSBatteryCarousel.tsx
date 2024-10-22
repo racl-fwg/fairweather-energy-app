@@ -11,9 +11,9 @@ const ESSBatteryCarousel: React.FC = () => {
   return (
     <div className="space-y-16 min-h-screen">
       {/* Top Section: Header, Horizontal Line, and Right Aligned Text */}
-      <div className="max-w-[1600px] mx-auto px-4 lg:px-8 pt-8">
+      <div className="max-w-[1600px] mx-auto px-4 pt-8">
         {/* Horizontal Line */}
-        <div className="w-full border-t border-darkNature mb-8"></div>
+        <div className="w-full border-t border-darkNature mb-16"></div>
 
         {/* Header and Right-aligned Text */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-10">

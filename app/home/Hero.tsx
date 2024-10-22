@@ -5,7 +5,7 @@ import HeroPropComponent from '@/components/Hero/HeroPropComponent'; // Import t
 const Hero: React.FC = () => {
   return (
     <HeroPropComponent
-      header="Renewable energy for a sustainable future with sunlight shaping our tomorrow"
+      header="Renewable energy for a sustainable future"
       textPosition="left-center"
       logoPosition="bottom-left"
       imageSrc="/images/home/hero.png"

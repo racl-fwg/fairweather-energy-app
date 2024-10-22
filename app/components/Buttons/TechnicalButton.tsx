@@ -22,7 +22,7 @@ const TechnicalButton: React.FC<TechnicalButtonProps> = ({ text, size = 'medium'
   return (
     <Link href={href}>
       <div
-        className={`bg-black text-white rounded-full inline-flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-white hover:text-black border border-black hover:scale-105 ${sizeStyles[size]}`}
+        className={`bg-black text-white font-semibold rounded-full inline-flex items-center justify-center transition-all duration-300 ease-in-out hover:bg-white hover:text-black border border-black hover:scale-105 ${sizeStyles[size]}`}
       >
         <span>{text}</span>
         <svg

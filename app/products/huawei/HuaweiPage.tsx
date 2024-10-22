@@ -5,7 +5,7 @@ const HuaweiPage: React.FC = () => {
   return (
     <section className="py-16 relative">
       {/* Huawei Logo in Background */}
-      <div className="absolute right-0 top-20 w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-0 opacity-10">
+      <div className="absolute left-10 top-20 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] z-0 opacity-10">
         <Image
           src="/images/products/huawei/Huawei_Standard_logo.png"
           alt="Huawei Background Logo"
@@ -18,7 +18,7 @@ const HuaweiPage: React.FC = () => {
 
       {/* Text Content Section */}
       <div className="relative z-10 text-left px-8 md:px-20 lg:px-36 max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-darkNature mb-6">HUAWEI</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-darkNature mb-6">HUAWEI</h1>
         <p className="text-lg text-gray-700 mb-6">
           Huaweis LUNA2000-batterier är modulära energilagringslösningar för ditt hem. Med kapacitet från 5 kWh upp till 82,8 kWh. De har avancerade säkerhetsfunktioner som skydd mot överladdning och övertemperatur, samt explosionssäkra ventiler. Huawei följer certifieringar som IEC 62619 och UN38.3 för hög säkerhet och pålitlig transport.
           <span className="font-bold"> CE, RCM, CEC, VDE2510-50, IEC62619, IEC 60730, UN38.3</span>
@@ -34,12 +34,8 @@ const HuaweiPage: React.FC = () => {
         {[
           { title: "Kapacitet", value: "6,9–20,7 kWh", text: "Skalar från 6,9 kWh till 20,7 kWh per styrenhet. Maximal: 4 styrenheter med totalt 82,8 kWh för en MBO-växelriktare, 2 styrenheter med totalt 42 kWh lagring för M1-växelriktare." },
           { title: "Effektivitet", value: "10–25 kW", text: "LUNA2000 S1-serien är kompatibel med MBO-växelriktare, där den har en max uteffekt på 25kW (största storlek på växelriktare) & för M1-serien 10,5 kW (största storlek på växelriktare)." },
-          { title: "Livslängd", value: "(Cykler)", text: "LUNA2000-batteriet är designat för att klara över 6 000 laddnings- och urladdningscykler, med bibehållen kapacitet på minst 70 %." },
-          { title: "Max laddning och urladdning", value: "(C-rate)", text: "LUNA2000 har en C-rate på upp till 0,5C för laddning och urladdning, vilket innebär att batteriet kan ladda och urladda halva sin kapacitet på en timme." },
-          { title: "Kapacitet", value: "5–15 kWh", text: "Skalar från 5 kWh till 15 kWh per grupp Maximal: 2 grupper med 30 kWh för en M1-växelriktare." },
-          { title: "Effektivitet", value: "10,5 kW", text: "Huawei LUNA2000 SO-serien är kompatibel med M1-växelriktare och har då en uteffekt på 10,5 kW." },
-          { title: "Livslängd", value: "(Cykler)", text: "LUNA2000-batteriet är designat för att klara över 6 000 laddnings- och urladdningscykler, med bibehållen kapacitet på minst 70 %." },
-          { title: "Max laddning och urladdning", value: "(C-rate)", text: "LUNA2000 har en C-rate på upp till 0,5C för laddning och urladdning, vilket innebär att batteriet kan ladda och urladda halva sin kapacitet på en timme." }
+          { title: "Livslängd", value: "Cykler", text: "LUNA2000-batteriet är designat för att klara över 6 000 laddnings- och urladdningscykler, med bibehållen kapacitet på minst 70 %." },
+          { title: "Max laddning och urladdning", value: "C-rate", text: "LUNA2000 har en C-rate på upp till 0,5C för laddning och urladdning, vilket innebär att batteriet kan ladda och urladda halva sin kapacitet på en timme." },
         ].map((item, index) => (
           <div
             key={index}

@@ -4,6 +4,7 @@ import React from "react";
 import QuoteButton from "@/components/Buttons/QuoteButton";
 import { motion } from "framer-motion"; // Import motion for animations
 import { defaultTextFadeIn, headerTextFadeIn } from "@/components/utils/animations"; // Import animations
+import ArrowButton from "@/components/Buttons/ArrowButton";
 
 const PixiiAbout: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const PixiiAbout: React.FC = () => {
         {...defaultTextFadeIn} // Applying the text slide fade animation
       >
         Pixii är en ledande aktör inom energilagringssystem och erbjuder flexibla
-        lösningar för både hem och kommersiella tillämpningar. Med Pixii&aposs innovativa
+        lösningar för både hem och kommersiella tillämpningar. Med Pixiis innovativa
         energilagring kan du optimera din energiförbrukning genom att lagra
         överskottsenergi från solceller eller elnätet när elpriserna är låga och använda
         den när efterfrågan och priserna är högre. Pixii fokuserar på att kombinera nordisk
@@ -32,7 +33,7 @@ const PixiiAbout: React.FC = () => {
 
       {/* Quote Button without animation */}
       <div className="mt-12">
-        <QuoteButton invertColors />
+        <ArrowButton text="Kontakta oss" href="/about#contact" />
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export default function HelpSection() {
         </h2>
 
         {/* Section Description */}
-        <p className="text-white text-xl leading-relaxed mb-8">
+        <p className="text-white text-base sm:text-xl leading-relaxed mb-8">
           Energimarknaden kan kännas som en djungel, men vi finns här för att guida dig rätt. 
           Vi hjälper dig att välja det bästa systemet för dina unika förutsättningar. 
           Kontakta oss så ser vi till att du får den lösning som passar dig bäst!

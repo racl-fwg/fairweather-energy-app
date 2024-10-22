@@ -13,6 +13,8 @@ const SajHero: React.FC = () => {
       buttonLink="/contact"  // Link to the contact page
       buttonType="ArrowButton"
       textPosition="bottom-left"
+      logoSrc="/images/products/saj/saj_hero_logo.png"
+      logoSize="large"
     />
   );
 };

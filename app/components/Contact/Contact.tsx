@@ -26,8 +26,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevent the page from refreshing
 
-    console.log("Form submission triggered."); // Debug log
-
     // Form validation
     if (!formData.name) {
       setError("Namn är obligatoriskt.");
@@ -53,8 +51,6 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      console.log("Response from API:", response); // Debug log
-
       if (response.ok) {
         const responseData = await response.json();
         setSuccess("Tack för att du kontaktade oss! Vi återkommer inom kort.");
@@ -72,13 +68,13 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-lightNeon py-16">
       <div
-        className="relative bg-cover bg-center h-[900px] md:h-[800px] lg:h-[800px] rounded-2xl mx-auto max-w-7xl overflow-hidden shadow-lg flex items-center justify-center"
+        className="relative bg-cover bg-center h-[900px] md:h-[800px] lg:h-[800px] rounded-3xl mx-auto max-w-7xl overflow-hidden shadow-lg flex items-center justify-center"
         style={{ backgroundImage: "url('/images/home/Contact_3D_background.png')" }}
       >
-        <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-let">
+        <div className="relative z-10 bg-black bg-opacity-5 container mx-auto px-4 h-full flex items-center justify-let">
           <div className="w-full lg:w-3/4 xl:w-2/3 2xl:w-1/2 px-6 lg:px-12 xl:px-16 py-8">
             <h2 className="text-5xl font-bold text-energy mb-6">Kontakta oss</h2>
-            <p className="text-lg text-lightNeon mb-8">
+            <p className="text-base sm:text-lg text-lightNeon mb-8">
               Vårt team är redo att svara på era frågor och guida er genom processen. Kontakta oss idag för att ta nästa steg mot en skräddarsydd batterilösning som passar just era behov.
             </p>
 

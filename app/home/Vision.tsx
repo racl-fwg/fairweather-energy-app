@@ -19,16 +19,16 @@ export default function Vision() {
 
         {/* Vision Description with Updated Text */}
         <motion.p 
-          className="text-lg text-darkNature leading-relaxed max-w-3xl mx-auto mb-12"
+          className="text-base sm:text-lg text-darkNature leading-relaxed max-w-3xl mx-auto mb-12"
           {...defaultTextFadeIn}
         >
           Batterier spelar en central roll i övergången till en hållbar framtid. De används för att lagra förnybar energi från solen och vinden, säkra strömförsörjningen vid avbrott och optimera energianvändningen i hem, företag och industrier. Genom att erbjuda flexibla och effektiva energilagringslösningar strävar vi efter att möjliggöra en värld där energi alltid finns tillgänglig, är ren och pålitlig.
         </motion.p>
 
         {/* Vision Buttons */}
-        <div className="flex justify-center space-x-4">
-          <ArrowButton text="Om oss" size="large" href="/about#about" />
+        <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-4 sm:space-y-0">
           <OutlinedButton text="Läs mer om vårt Hållbarhetsmål" href="/sustainability" size="medium" />
+          <ArrowButton text="Om oss" size="large" href="/about#about" />
         </div>
       </div>
     </section>

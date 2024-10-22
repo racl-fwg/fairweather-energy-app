@@ -6,32 +6,28 @@ import { headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animatio
 
 export default function AboutPage() {
   return (
-    <section id="about" className="py-16 bg-lightNeon">
+    <section id="about" className="py-12 bg-lightNeon">
       <div className="container mx-auto px-4">
         {/* Introduction Section */}
-        <div className="mb-24 mt-12 text-center max-w-3xl mx-auto">
+        <div className="mb-16 mt-12 text-center max-w-3xl mx-auto">
           <motion.div
-            className="text-3xl font-semibold text-darkNature mb-4"
+            className="text-left md:text-center text-4xl font-semibold text-darkNature mb-8"
             {...headerTextFadeIn}
           >
             Om oss – för bättre energilösningar
           </motion.div>
           <motion.div
-            className="text-lg text-darkNature leading-7 mb-8"
+            className="text-left md:text-center text-base sm:text-lg text-darkNature leading-7 mb-8"
             {...defaultTextFadeIn}
           >
             Som oberoende konsulter fokuserar vi helt på kundupplevelsen. Vi lyssnar på era behov – både vad gäller hårdvara och installation – för att säkerställa att ni är nöjda med hela processen. Vi håller oss ständigt uppdaterade om de senaste funktionerna inom batteriteknik och nya ekonomiska möjligheter. Ni får tydlig information om både möjligheter och begränsningar när ni ska välja rätt batteri. Dessutom får ni en ordentlig genomgång av systemets applikation, så att ni enkelt kan följa utvecklingen och se hur ert system presterar.
-          </motion.div>
-          <motion.div
-            className="text-lg text-darkNature leading-7 mb-8"
-            {...defaultTextFadeIn}
-          >
+          <br /> <br />
             Vi finns här för att göra ert val av batterisystem enkelt och tryggt. Med vår expertis och personliga service hjälper vi er att ta rätt beslut och maximera nyttan av er installation. Er nöjdhet är vår högsta prioritet. Låt oss göra er batterilösning till en framgång!
           </motion.div>
         </div>
 
         {/* Horizontal Line */}
-        <motion.hr className="border-t-1 border-darkNature mb-12" {...defaultTextFadeIn} />
+        <motion.hr className="border-t-1 border-darkNature mb-16" {...defaultTextFadeIn} />
 
         {/* Use the New ThreeCardsLayout Component */}
         <ThreeCardsLayout
@@ -75,13 +71,13 @@ export default function AboutPage() {
         {/* Final Call-to-Action Section */}
         <div className="text-center">
           <motion.div
-            className="text-2xl md:text-3xl font-semibold text-darkNature mb-4"
+            className="text-3xl xl:text-4xl font-semibold text-darkNature mb-4"
             {...headerTextFadeIn}
           >
             Låt oss hjälpa er på vägen mot en effektivare energilösning!
           </motion.div>
           <motion.div
-            className="text-lg text-darkNature leading-7 mb-8 max-w-3xl mx-auto"
+            className="text-base sm:text-lg text-darkNature leading-7 max-w-3xl mx-auto"
             {...defaultTextFadeIn}
           >
             Vårt team är redo att svara på era frågor och guida er genom processen – från första konsultationstillfället till färdig installation. Kontakta oss idag för att ta nästa steg mot en skräddarsydd batterilösning som passar just era behov.

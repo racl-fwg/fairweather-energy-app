@@ -9,9 +9,6 @@ interface Props {
   description2: string;
   carouselImages: string[];
   offerButtonClass?: string;
-  groupImage1?: string;
-  groupImage2?: string;
-  background?: string;
   reverseLayout?: boolean; // New prop to control layout direction
 }
 
@@ -21,11 +18,10 @@ export const ProductCarouselSectionProp = ({
   description2,
   offerButtonClass = "",
   carouselImages,
-  background,
   reverseLayout = false, // Default is false (image on the right)
 }: Props): JSX.Element => {
   return (
-    <div className="max-w-[1600px] mx-12 px-4 lg:px-6 py-6 bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row lg:h-[600px] my-12">
+    <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6 bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row lg:h-auto my-12 sm:mx-4 lg:mx-12">
       {/* Conditional layout: reverseLayout controls the order of elements */}
       <div
         className={`w-full lg:w-[40%] flex flex-col justify-between space-y-4 h-full ${
@@ -34,32 +30,44 @@ export const ProductCarouselSectionProp = ({
       >
         {/* Top: Title and Descriptions */}
         <div className="flex-grow">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-nature mb-4">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-nature mb-6">
             {title}
           </h2>
 
-          <p className="text-sm lg:text-sm text-darkNature mb-4">{description1}</p>
-          <p className="text-sm lg:text-sm text-darkNature mb-8">{description2}</p>
+          <p className="text-sm sm:text-base text-darkNature mb-8">
+            {description1}
+          </p>
+          <p className="text-sm sm:text-base text-darkNature mb-4">
+            {description2}
+          </p>
 
           {/* Buttons for Technical Information */}
-          <div className="flex flex-col sm:flex-row sm:gap-4 gap-2 justify-center sm:justify-start mb-4">
+          <div className="flex flex-col sm:flex-row sm:gap-4 gap-2 justify-start mb-4 mt-6">
             <TechnicalButton text="Datablad" size="small" href="/datablad" />
-            <TechnicalButton text="Produktinformation" size="small" href="/product-info" />
+            <TechnicalButton
+              text="Produktinformation"
+              size="small"
+              href="/product-info"
+            />
+            {/* Add Quote Button in the row for mid-size breakpoints */}
+            <div className="hidden lg:hidden md:flex md:w-auto md:flex-row items-center">
+              <QuoteButton invertColors /> {/* Ensuring it appears in a row */}
+            </div>
           </div>
-        </div>
 
-        {/* Bottom: Quote Button at the bottom for larger screens */}
-        <div className="hidden md:block mt-auto">
-          <QuoteButton invertColors />
+          {/* Quote Button aligned with text and datablad button for larger viewports */}
+          <div className="hidden lg:flex justify-start mt-6">
+            <QuoteButton invertColors /> {/* Ensuring left alignment */}
+          </div>
         </div>
       </div>
 
-      {/* Right Side: Carousel with reserved space for Quote Button on smaller screens */}
-      <div className="w-full lg:w-[60%] p-6 h-full">
+      {/* Right Side: Carousel */}
+      <div className="w-full lg:w-[60%] h-auto relative">
         <ProductsCarousel images={carouselImages} />
 
-        {/* Quote Button for smaller screens (moved below the carousel) */}
-        <div className="mt-8 md:hidden flex justify-center">
+        {/* Quote Button for smaller screens in the top/down layout */}
+        <div className="mt-8 flex lg:hidden md:hidden justify-center mb-4">
           <QuoteButton invertColors />
         </div>
       </div>

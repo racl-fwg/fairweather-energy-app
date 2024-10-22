@@ -17,12 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Run the analytics hook only on the client
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      useGoogleAnalytics();
-    }
-  }, []); // Empty array ensures this runs only once after mounting
 
   return (
     <html lang="en">

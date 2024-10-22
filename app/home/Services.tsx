@@ -63,7 +63,7 @@ export default function Services() {
           </motion.p>
 
           {/* Graphic Image */}
-          <motion.div className="flex justify-center" {...defaultTextFadeIn}>
+          <motion.div className="flex justify-center" {...headerTextFadeIn}>
             <Image
               src="/images/home/service-graphic.png"
               alt="Battery Service Graphic"

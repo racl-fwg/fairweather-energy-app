@@ -17,7 +17,7 @@ const OutlinedButton: React.FC<OutlinedButtonProps> = ({ text, href, size = 'med
   return (
     <Link href={href} passHref>
       <div
-        className={`inline-flex items-center justify-center border-2 border-darkNature rounded-full text-darkNature transition-all duration-300 hover:bg-darkNature hover:text-lightNeon ${sizeClasses[size]}`}
+        className={`inline-flex items-center justify-center font-semibold border-2 border-darkNature rounded-full text-darkNature transition-all duration-300 hover:bg-darkNature hover:text-lightNeon ${sizeClasses[size]}`}
       >
         {text}
       </div>

@@ -59,19 +59,19 @@ export default function Products() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           
           {/* Large Product Showcase Section */}
-          <div className="md:col-span-2 lg:col-span-4 bg-white relative rounded-2xl overflow-hidden">
+          <div className="md:col-span-2 lg:col-span-4 relative rounded-2xl overflow-auto">
             <div className="w-full h-[400px] lg:h-[500px] relative">
               <Image
                 src={selectedProduct.imgSrc}
                 alt={selectedProduct.name}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'fill' }}
                 className="mx-auto"
               />
             </div>
 
             {/* Text Overlay on Image */}
-            <div className="absolute bottom-4 left-0 p-6 w-full bg-opacity-50 bg-white">
+            <div className="absolute bottom-4 left-0 p-6 w-full bg-opacity-40 bg-white">
               <h3 className="text-3xl lg:text-4xl font-semibold text-darkNature mb-2">
                 {selectedProduct.name}
               </h3>
@@ -87,7 +87,7 @@ export default function Products() {
               <div
                 key={product.id}
                 onClick={() => setSelectedProduct(product)}
-                className={`relative cursor-pointer bg-white w-[45%] md:w-[24%] lg:w-full h-[86px] lg:h-[120px] rounded-lg overflow-hidden shadow-lg text-center ${
+                className={`relative cursor-pointer bg-white w-[45%] md:w-[24%] lg:w-full h-[106px] lg:h-[120px] rounded-lg overflow-auto shadow-lg text-center ${
                   selectedProduct.id === product.id ? 'border-2 border-energy' : 'border'
                 } transition duration-300 ease-in-out mx-auto`}
               >
@@ -100,7 +100,7 @@ export default function Products() {
                 />
 
                 {/* Product Name Overlay */}
-                <h4 className="absolute bottom-2 left-2 text-lightNeon text-lg font-semibold px-2 py-1 rounded-md">
+                <h4 className="absolute bottom-2 left-1 text-lightNeon text-lg font-semibold px-2 py-1 rounded-md">
                   {product.name}
                 </h4>
 
@@ -114,7 +114,7 @@ export default function Products() {
 
           {/* Description and Explore Button Section */}
           <div className="lg:col-span-3 p-4 mt-0 lg:mt-0">
-            <p className="text-lg text-black font-regular">{selectedProduct.description}</p>
+            <p className="text-base sm:text-lg text-center sm:text-left text-darkNature">{selectedProduct.description}</p>
           </div>
 
           {/* Explore More Button using ArrowButton */}

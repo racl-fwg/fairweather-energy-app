@@ -33,10 +33,10 @@ const PowerBackupSection: React.FC = () => {
       <div className="relative z-10 container mx-auto px-2 lg:px-4 xl:px-6 text-white">
         {/* Header Section */}
         <div className="mb-8 xl:text-left text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#e9ff66] mb-2">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#e9ff66] mb-2">
             Har strömmen gått? Inga problem!
           </h2>
-          <p className="text-sm md:text-lg lg:text-xl max-w-4xl mx-auto xl:mx-0">
+          <p className="text-base lg:text-lg max-w-4xl mx-auto xl:mx-0 w-4/5 lg:w-3/5">
             Med Back Up Box har du som batteriägare möjlighet att använda din lagrade energi i hemmet under ett strömavbrott.
           </p>
         </div>
@@ -45,8 +45,8 @@ const PowerBackupSection: React.FC = () => {
         <div className="hidden xl:flex flex-col xl:flex-row justify-center items-start gap-4 lg:gap-6">
           {/* Box 1 */}
           <div className="flex flex-col items-start w-full xl:w-1/4 px-2 py-2 lg:py-4">
-            <h3 className="text-xl font-bold mb-1 text-[#e9ff66]">Upptäckt av strömavbrott</h3>
-            <p className="text-base">{boxes[0].content}</p>
+            <h3 className="text-2xl font-bold mb-1 text-[#e9ff66]">Upptäckt av strömavbrott</h3>
+            <p className="text-base lg:text-lg">{boxes[0].content}</p>
           </div>
 
           {/* Arrow 1 */}

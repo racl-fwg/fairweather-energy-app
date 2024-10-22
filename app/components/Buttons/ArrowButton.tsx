@@ -20,7 +20,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ text, children, size = 'mediu
 
   const buttonContent = (
     <div
-      className={`inline-flex bg-energy text-darkNature rounded-full items-center justify-center space-x-2 transition-all duration-300 ease-in-out hover:bg-energy hover:text-darkNature hover:shadow-lg hover:scale-105 ${sizeStyles[size]}`}
+      className={`inline-flex bg-energy text-darkNature font-semibold rounded-full items-center justify-center space-x-2 transition-all duration-300 ease-in-out hover:bg-energy hover:text-darkNature hover:shadow-lg hover:scale-105 ${sizeStyles[size]}`}
     >
       <span>{text || children}</span> {/* Use text if provided, fallback to children */}
       {/* Arrow icon placed next to text */}
