@@ -33,9 +33,6 @@ const EmaldoProduct: React.FC = () => {
           description1="Den AI-drivna versionen köper el automatiskt när priserna är som lägst och använder den under dyra timmar. Dessutom erbjuder systemet möjlighet till strömbackup för kritiska apparater, och kan även mata tillbaka elnätet, vilket kan generera passiva intäkter för hushållet. Installationen är enkel, och du kan enkelt övervaka och kontrollera systemet med den medföljande appen."
           description2="Med avancerad teknik är Emaldo® Power Store AI det smarta valet för hållbar och kostnadseffektiv energilagring, även om du har ett nytt eller befintligt solcellsystem."
           carouselImages={emaldoCarouselImages}
-          groupImage1="/images/icons/group-303.png"  // Optional: add specific group images if available
-          groupImage2="/images/icons/group-304.png"  // Optional: add specific group images if available
-          background="/images/products/emaldo/emaldo-background.png"  // Optional background image
         />
       </div>
     </div>

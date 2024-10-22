@@ -39,9 +39,6 @@ const ESSBatteryCarousel: React.FC = () => {
           description1="Huawei erbjuder en flexibel och skalbar energilagringslösning med sin LUNA2000-serie, designad för att möta behoven hos kommersiella och industriella applikationer. Systemen är modulära och kan skalas från 100 kWh upp till 2 MW, vilket möjliggör anpassning efter växande energibehov. Med hög verkningsgrad och avancerade säkerhetsfunktioner är Huawei’s ESS idealisk för flera användningsområden, inklusive lastutjämning, peak shaving och integration med förnybara energikällor som solenergi."
           description2="Systemet stöder även nätstabilisering genom tjänster som frekvensreglering och spänningsstöd, vilket gör det värdefullt för nätoperatörer. Tack vare dess robusta säkerhetsdesign och användning av LFP-batterier (litiumjärnfosfat), erbjuder systemet en säker och tillförlitlig lösning för energilagring, även under extrema förhållanden."
           carouselImages={essCarouselImages}
-          groupImage1="/images/icons/group-303.png"  // Optional: add specific group images if available
-          groupImage2="/images/icons/group-304.png"  // Optional: add specific group images if available
-          background="/images/products/huawei/ess-background.png"  // Optional background image
         />
       </div>
     </div>

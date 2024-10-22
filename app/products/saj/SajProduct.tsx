@@ -41,9 +41,6 @@ const SajProduct: React.FC = () => {
           description1="SAJ® HS2-serien är en optimal lösning för hushåll med solcellsanläggningar som vill ta kontroll över sin energianvändning genom avancerad energilagring. Systemet innehåller en kraftfull 10 kW hybridväxelriktare med en kapacitet på upp till 10 kW, tillsammans med ett skalbart LiFePO4-batteri som startar på 5,12 kWh och kan utökas upp till 15 kWh för ökad kapacitet."
           description2="HS2-serien har inbyggd backup-funktion, vilket innebär att den kan hantera reservkraftdrift utan behov av en extern backup-box. Denna funktion gör att växelriktaren snabbt kan växla till batteridrift vid ett strömavbrott, med en strömbasväxlingstid på mindre än 10 millisekunder. Det säkerställer att viktiga apparater fortsätter att fungera även när strömmen från nätet försvinner."
           carouselImages={hs2CarouselImages}
-          groupImage1="/images/icons/group-303.png"  // Optional: add specific group images if available
-          groupImage2="/images/icons/group-304.png"  // Optional: add specific group images if available
-          background="/images/products/saj/saj_hero.png"  // Optional background image
         />
       </div>
 
@@ -54,9 +51,6 @@ const SajProduct: React.FC = () => {
           description1="SAJ® B2-serien är en flexibel och skalbar batterilösning för energilagring som är utformad för att integreras med befintliga växelriktare, som t.ex. HS2-serien. HS2-systemet använder säkra och pålitliga LiFePO4-batterier och erbjuder en lagringskapacitet som börjar på 5,12 kWh men som enkelt kan utökas upp till 21,5 kWh genom att stapla moduler."
           description2="B2-seriens robusta design och IP65-klassning gör att systemet kan installeras både inomhus och utomhus, och erbjuder långvarig hållbarhet och hög effektivitet i olika klimatförhållanden."
           carouselImages={b2CarouselImages}
-          groupImage1="/images/icons/group-305.png"  // Optional: add specific group images if available
-          groupImage2="/images/icons/group-306.png"  // Optional: add specific group images if available
-          background="/images/products/saj/saj_hero.png"  // Optional background image
           reverseLayout
         />
       </div>

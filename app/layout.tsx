@@ -1,11 +1,9 @@
 // app/layout.tsx
 import './globals.css';
-import { useGoogleAnalytics } from './hooks/useGoogleAnalytics';
 import { QuoteProvider } from './context/QuouteContext';
 import Script from 'next/script';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
-import { useEffect } from 'react';
 
 export const metadata = {
   title: 'Fairweather Energy',

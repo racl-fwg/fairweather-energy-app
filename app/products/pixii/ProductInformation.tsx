@@ -21,9 +21,6 @@ const ProductInformation: React.FC = () => {
           description1="Pixii Home är en flexibel och modulär energilagringslösning som är utformad för bostäder. Det ger husägare möjlighet att öka sin energisjälvförsörjning genom att lagra överskottsenergi från solceller eller elnätet och använda den när det behövs som mest. Systemet är enkelt att installera och erbjuder en grundkapacitet på 10 kWh som kan skalas upp till 22 kWh genom att lägga till fler batterimoduler. Detta ger dig möjlighet att anpassa systemet efter ditt hushålls växande energibehov."
           description2="Pixii Home har flera säkerhetsfunktioner, inklusive batterisäkringar, batteribrytare och ett skyddat 48V DC-system för säker installation och drift."
           carouselImages={pixiiCarouselImages}
-          groupImage1="/images/icons/group-303.png"
-          groupImage2="/images/icons/group-304.png"
-          background="/images/products/pixii/pixii-background.png"
         />
       </div>
 
@@ -35,9 +32,6 @@ const ProductInformation: React.FC = () => {
           description2="Kraftfull och skalbar: Varje PowerShaper-enhet kan hantera upp till 50 kW och användas. En eller flera MAC-batterier för att uppfylla olika energikrav."
           carouselImages={powershaperImages}
           reverseLayout={true} // Set reverse layout for PowerShaper
-          groupImage1="/images/icons/group-303.png"
-          groupImage2="/images/icons/group-304.png"
-          background="/images/products/pixii/pixii-background.png"
         />
       </div>
     </div>
