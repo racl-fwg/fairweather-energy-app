@@ -5,6 +5,7 @@ import Script from 'next/script';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Footer from './components/Footer/Footer';
 import ClientOnlyComponent from './ClientOnlyComponent';
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: 'Fairweather Energy',
@@ -35,6 +36,7 @@ export default function RootLayout({
           <main className="no-top-padding">{children}</main>
           <Footer />
           {/* This ensures client-only code is separated */}
+          <Analytics />
           <ClientOnlyComponent />
         </QuoteProvider>
       </body>
