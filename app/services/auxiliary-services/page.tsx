@@ -4,12 +4,15 @@ import ServiceSteps from './ServiceSteps';
 import ValueReturn from './ValueReturn';
 import Benefits from './Benefits';
 import AnimatedCarouselCards from './AninmatedCarouselCards';
+import IntroAuxiliary from './IntroAuxiliary';
 
 const AuxiliaryServices: React.FC = () => {
   return (
     <>
       {/* Custom Hero Section */}
       <AuxiliaryHero />
+
+      <IntroAuxiliary />
 
       {/* Service Steps Section */}
       <ServiceSteps />

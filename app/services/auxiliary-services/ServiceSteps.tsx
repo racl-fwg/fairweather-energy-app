@@ -5,8 +5,8 @@ import ArrowButton from '@/components/Buttons/ArrowButton';
 const ServiceStepsSection: React.FC = () => {
   return (
     <ImageTextCardWithSteps
-      title="Vad är stödtjänster?"
-      description="Stödtjänster stabiliserar elnätet genom att hålla frekvensen nära 50 Hz. Frekvensförändringar uppstår när det är obalans mellan elproduktion och förbrukning, vilket kan orsaka störningar."
+      title="Hur fungerar stödtjänster?"
+      description="Vi hjälper dig genom hela processen, från förkvalificering och installation till övervakning. Oavsett om du vill stabilisera elnätet med batterier eller optimera din elproduktion, ger vi dig stöd genom varje steg."    
       imageSrc="/images/auxiliary-services/Luna2000_winter_1.png"
       imageAlt="Luna2000 Winter"
       imagePosition="right"

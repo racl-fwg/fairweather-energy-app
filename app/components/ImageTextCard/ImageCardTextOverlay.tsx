@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { defaultTextFadeIn, headerTextFadeIn } from '@/components/utils/animations';
@@ -25,7 +25,6 @@ type ImageTextCardWithBenefitsProps = {
   benefitSpacing?: string; // Spacing between benefits
 };
 
-// ImageTextCardWithBenefits Component
 const ImageTextCardWithBenefits: React.FC<ImageTextCardWithBenefitsProps> = ({
   title,
   subTitle,
@@ -34,10 +33,20 @@ const ImageTextCardWithBenefits: React.FC<ImageTextCardWithBenefitsProps> = ({
   backgroundAlt,
   benefits,
   className = "",
-  containerHeight = "h-[600px]", // Default height (increased for better spacing)
-  containerPadding = "p-6 sm:px-8 md:px-12 lg:px-16 xl:px-24", // Responsive padding for different screen sizes
-  benefitSpacing = "space-y-4 sm:space-y-6 md:space-y-8", // Responsive spacing
+  containerHeight = "h-[600px]",
+  containerPadding = "p-6 sm:px-8 md:px-12 lg:px-16 xl:px-24",
+  benefitSpacing = "space-y-4 sm:space-y-6 md:space-y-8",
 }) => {
+  // Current visible benefit index (for cycling through benefits in smaller viewports)
+  const [visibleBenefitIndex, setVisibleBenefitIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleBenefitIndex((prevIndex) => (prevIndex + 1) % benefits.length);
+    }, 10000); // Auto-switch every 10 seconds
+    return () => clearInterval(interval);
+  }, [benefits]);
+
   return (
     <section className={`py-16 ${className}`}>
       {/* Top Line and Text Section */}
@@ -92,10 +101,29 @@ const ImageTextCardWithBenefits: React.FC<ImageTextCardWithBenefitsProps> = ({
 
           {/* Benefit Points */}
           <motion.div className={benefitSpacing} {...defaultTextFadeIn}>
-            {/* Render Benefit Items Dynamically */}
+            {/* Render visible benefit */}
             {benefits.map((benefit, index) => (
-              <BenefitItem key={index} iconSrc={benefit.iconSrc} title={benefit.title} description={benefit.description} />
+              <BenefitItem
+                key={index}
+                iconSrc={benefit.iconSrc}
+                title={benefit.title}
+                description={benefit.description}
+                isVisible={index === visibleBenefitIndex}
+              />
             ))}
+
+            {/* Dots for switching between benefits */}
+            <div className="flex justify-center mt-4">
+              {benefits.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-3 h-3 rounded-full mx-1 cursor-pointer ${
+                    index === visibleBenefitIndex ? 'bg-energy' : 'bg-gray-300'
+                  }`}
+                  onClick={() => setVisibleBenefitIndex(index)}
+                />
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>
@@ -104,8 +132,15 @@ const ImageTextCardWithBenefits: React.FC<ImageTextCardWithBenefitsProps> = ({
 };
 
 /* Individual BenefitItem Component */
-const BenefitItem: React.FC<BenefitItemProps> = ({ iconSrc, title, description }) => (
-  <motion.div className="flex items-start text-white">
+const BenefitItem: React.FC<BenefitItemProps & { isVisible: boolean }> = ({
+  iconSrc,
+  title,
+  description,
+  isVisible,
+}) => (
+  <motion.div
+    className={`flex items-start text-white ${isVisible ? 'block' : 'hidden'} justify-center text-center`}
+  >
     {/* Icon Container */}
     <div className="w-12 h-12 md:w-16 md:h-16 lg:w-14 lg:h-14 flex items-center justify-center mr-4 lg:mr-6">
       <Image src={iconSrc} alt={title} width={100} height={100} className="object-contain" />
@@ -113,10 +148,10 @@ const BenefitItem: React.FC<BenefitItemProps> = ({ iconSrc, title, description }
 
     {/* Text Content */}
     <div>
-      <motion.h3 className="text-base md:text-lg lg:text-xl font-semibold text-energy mb-2" {...headerTextFadeIn}>
+      <motion.h3 className="text-lg md:text-xl font-semibold text-energy mb-2" {...headerTextFadeIn}>
         {title}
       </motion.h3>
-      <motion.p className="text-xs md:text-sm lg:text-base" {...defaultTextFadeIn}>
+      <motion.p className="text-sm md:text-base lg:text-lg" {...defaultTextFadeIn}>
         {description}
       </motion.p>
     </div>

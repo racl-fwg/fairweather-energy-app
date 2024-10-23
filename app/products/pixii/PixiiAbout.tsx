@@ -1,7 +1,6 @@
 // app/products/pixii/PixiiAbout.tsx
 "use client";
 import React from "react";
-import QuoteButton from "@/components/Buttons/QuoteButton";
 import { motion } from "framer-motion"; // Import motion for animations
 import { defaultTextFadeIn, headerTextFadeIn } from "@/components/utils/animations"; // Import animations
 import ArrowButton from "@/components/Buttons/ArrowButton";
