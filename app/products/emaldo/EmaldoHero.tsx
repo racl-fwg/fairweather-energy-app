@@ -8,7 +8,7 @@ const EmaldoHero = () => {
       subHeader="Effektiv och pålitlig energilagring med AI"
       imageSrc="/images/products/emaldo/emaldo_hero.png"
       buttonText="Läs mer"
-      buttonLink=""
+      buttonLink="/about#contact"
       buttonType="ArrowButton"
       textPosition="bottom-left"
       logoSrc="/images/products/emaldo/emaldo_logo_vit.png"

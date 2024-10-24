@@ -11,7 +11,7 @@ const ServicesHero: React.FC = () => {
         navigera regelverk och stödfunktioner. Vi hjälper dig att maximera energibesparingar, möta regulatoriska krav och säkerställa 
         att ditt energisystem fungerar smidigt och effektivt."
         buttonText="Kontakta oss"
-        buttonLink="#"
+        buttonLink="/about#contact"
         imageSrc="/images/services/House_on_platform 1.png" // Ensure no spaces in image file names
         whiteBackground={false} // Transparent background
       />

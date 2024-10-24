@@ -55,7 +55,7 @@ const RetrofitUpgradeSection: React.FC = () => {
             content: "Ett batterisystem ger dig tryggheten att ha ström även vid strömavbrott. Dina viktigaste apparater kan fortsätta fungera utan avbrott."
           }
         ]}
-        footerContent={<ArrowButton size="medium" href="/kontakt">Kontakta oss</ArrowButton>}
+        footerContent={<ArrowButton size="medium" href="/about#kontakt">Kontakta oss</ArrowButton>}
       />
     </section>
   );

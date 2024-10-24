@@ -8,7 +8,7 @@ const PixiiHero = () => {
       subHeader="Säkerhetslösningar som gör skillnad"
       imageSrc="/images/products/pixii/pixii_hero.png"
       buttonText="Kontakta oss"
-      buttonLink="/kontakt"
+      buttonLink="/about#kontakt"
       buttonType="ArrowButton"
       textPosition="bottom-left"
       logoSrc="/images/products/pixii/Pixii_logo.png"

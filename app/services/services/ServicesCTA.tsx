@@ -17,7 +17,7 @@ const ServicesCTA: React.FC = () => {
 
       {/* CTA Button */}
       <div className="mt-8">
-        <ArrowButton size="medium" href="#">
+        <ArrowButton size="medium" href="/about#contact">
           Kontakta oss
         </ArrowButton>
       </div>

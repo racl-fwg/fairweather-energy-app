@@ -10,7 +10,7 @@ const SajHero: React.FC = () => {
       subHeader="En komplett energilösning för ditt hem"
       imageSrc="/images/products/saj/saj_hero.png"  // SAJ hero background image
       buttonText="Kontakta oss"
-      buttonLink="/contact"  // Link to the contact page
+      buttonLink="/about#contact"  // Link to the contact page
       buttonType="ArrowButton"
       textPosition="bottom-left"
       logoSrc="/images/products/saj/saj_hero_logo.png"

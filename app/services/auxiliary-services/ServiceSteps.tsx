@@ -29,7 +29,7 @@ const ServiceStepsSection: React.FC = () => {
         },
       ]}
       buttonOverlayContent={
-        <ArrowButton text="Kontakta oss" size="medium" href="/contact" />
+        <ArrowButton text="Kontakta oss" size="medium" href="/about#contact" />
       }
       className="max-w-[1200px] mx-auto"
     />
