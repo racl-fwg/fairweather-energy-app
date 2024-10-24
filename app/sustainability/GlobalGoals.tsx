@@ -28,7 +28,7 @@ const GlobalGoals: React.FC = () => {
 
       {/* White Background Container for Goals and Image */}
       <motion.div
-        className="bg-white shadow-lg rounded-2xl px-[50px] py-12 mx-auto max-w-[1200px]"
+        className="bg-white shadow-lg rounded-2xl px-2 md:px-4 py-12 mx-auto max-w-[1200px]"
       >
         {/* Content Wrapper with Animation */}
         <div className="flex flex-col lg:flex-row gap-16 items-stretch">
