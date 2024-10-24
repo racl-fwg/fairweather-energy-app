@@ -18,7 +18,7 @@ const RetrofitHero: React.FC = () => {
 
         {/* Arrow Button with constrained width */}
         <div className="mt-4 max-w-fit"> {/* Added max-w-fit to limit button width */}
-          <ArrowButton size="large" href="/about#contakt">
+          <ArrowButton size="large" href="/about#contact">
             Kontakta oss
           </ArrowButton>
         </div>
