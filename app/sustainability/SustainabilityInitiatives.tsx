@@ -2,8 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import ImageTextCard from '@/components/ImageTextCard/ImageTextCard';
-import { motion } from 'framer-motion';
-import { defaultTextFadeIn } from '@/components/utils/animations';
 
 const SustainabilityInitiatives: React.FC = () => {
   return (

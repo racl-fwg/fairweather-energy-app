@@ -7,7 +7,7 @@ import { defaultTextFadeIn, headerTextFadeIn } from '@/components/utils/animatio
 
 const GlobalResponsibility: React.FC = () => {
   return (
-    <section className="py-16 px-[50px] bg-[#FEFFEB]">
+    <section className="py-16 px-6 sm:px-[50px] bg-[#FEFFEB]">
       {/* Horizontal Line */}
       <motion.hr
         className="border-t-1 border-darkNature mb-12"
@@ -21,6 +21,7 @@ const GlobalResponsibility: React.FC = () => {
         imageSrc="/images/sustainability/Fight_for_a_better_tomorrow.png"
         imageAlt="Global Responsibility Image"
         imagePosition="left"
+        
         subSections={[
           {
             heading: "Våra Lösningar",

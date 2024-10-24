@@ -102,15 +102,16 @@ const GoalItem: React.FC<{ iconSrc: string; title: string; description: string }
   title,
   description,
 }) => (
-  <motion.div className="flex items-start space-x-6" {...defaultTextFadeIn}>
+  <motion.div className="flex flex-col sm:flex-row sm:items-start space-x-0 sm:space-x-6 space-y-4 sm:space-y-0 w-full" {...defaultTextFadeIn}>
+    {/* Icon and Text Stack on small screens */}
     <Image
       src={iconSrc}
       alt={`${title} Icon`}
       width={50}
       height={50}
-      className="object-contain"
+      className="object-contain w-full sm:w-auto" // Full width on small screens
     />
-    <div>
+    <div className="flex-1">
       <h3 className="text-2xl text-[#003317] font-semibold">{title}</h3>
       <p className="text-sm text-black">{description}</p>
     </div>
