@@ -6,8 +6,6 @@ const Hero: React.FC = () => {
   return (
     <HeroPropComponent
       header="Renewable energy for a sustainable future"
-      textPosition="left-center"
-      logoPosition="bottom-left"
       imageSrc="/images/home/hero.png"
       logoSrc="/logotypes/Energy_Logotype_Energy_RGB.png"
     />
