@@ -91,7 +91,7 @@ export default function Products() {
                 selectedProduct.id === product.id
                   ? "border-1 border-energy"
                   : "border"
-              } transform transition-transform hover:scale-105 transition duration-300 ease-in-out mx-auto`}
+              } transform transition-transform hover:scale-105 duration-300 ease-in-out mx-auto`}
             >
               <Image
                 src={product.previewImgSrc}

@@ -98,11 +98,6 @@ export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ images }) =>
           ></button>
         ))}
       </div>
-
-      {/* Swipe indicator for mobile devices */}
-      <div className="lg:hidden absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-darkNature">
-        Swipe for more
-      </div>
     </div>
   );
 };
