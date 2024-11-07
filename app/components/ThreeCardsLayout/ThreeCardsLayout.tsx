@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cardAnimation, headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
+import { textFadeIn } from '@/components/utils/animations';
+import ContainerWrapper from '../Wrapper/ContainerWrapper';
 
 type CardProps = {
   iconSrc: string;
@@ -22,14 +23,15 @@ const ThreeCardsLayout: React.FC<ThreeCardsLayoutProps> = ({
 }) => {
   return (
     <div className="mb-12 text-darkNature">
+      <ContainerWrapper>
       {/* Section Header and Description */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-start">
         {/* Section Title */}
-        <motion.div className="md:col-span-1" {...headerTextFadeIn}>
+        <motion.div className="md:col-span-1" {...textFadeIn}>
           <h2 className="text-3xl xl:text-4xl font-semibold mb-4">{sectionTitle}</h2>
         </motion.div>
         {/* Section Description */}
-        <motion.div className="text-lg md:col-start-2 md:col-span-2" {...defaultTextFadeIn}>
+        <motion.div className="text-lg md:col-start-2 md:col-span-2" {...textFadeIn}>
           <p>{sectionDescription}</p>
         </motion.div>
       </div>
@@ -37,10 +39,9 @@ const ThreeCardsLayout: React.FC<ThreeCardsLayoutProps> = ({
       {/* Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
         {cards.map((card, index) => (
-          <motion.div
+          <div
             key={index}
-            className="p-8 bg-white shadow-lg rounded-3xl relative"
-            {...cardAnimation(0.2 + index * 0.2)} // Staggered animation for each card
+            className="p-8 bg-white shadow-lg rounded-3xl relative transfrom transition-transform hover:scale-105"
           >
             <img
               src={card.iconSrc}
@@ -55,9 +56,10 @@ const ThreeCardsLayout: React.FC<ThreeCardsLayoutProps> = ({
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         ))}
       </div>
+      </ContainerWrapper>
     </div>
   );
 };

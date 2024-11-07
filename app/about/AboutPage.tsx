@@ -2,23 +2,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ThreeCardsLayout from '@/components/ThreeCardsLayout/ThreeCardsLayout';
-import { headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
+import { textFadeIn } from '@/components/utils/animations';
+import ContainerWrapper from '@/components/Wrapper/ContainerWrapper';
 
 export default function AboutPage() {
   return (
     <section id="about" className="py-12 bg-lightNeon">
-      <div className="container mx-auto px-4">
+        <ContainerWrapper>
         {/* Introduction Section */}
-        <div className="mb-16 mt-12 text-center max-w-3xl mx-auto">
+        <div className="mb-16 mt-12 text-center max-w-4xl mx-auto">
           <motion.div
             className="text-left md:text-center text-4xl font-semibold text-darkNature mb-8"
-            {...headerTextFadeIn}
+            {...textFadeIn}
           >
             Om oss – för bättre energilösningar
           </motion.div>
           <motion.div
             className="text-left md:text-center text-base sm:text-lg text-darkNature leading-7 mb-8"
-            {...defaultTextFadeIn}
+            {...textFadeIn}
           >
             Som oberoende konsulter fokuserar vi helt på kundupplevelsen. Vi lyssnar på era behov – både vad gäller hårdvara och installation – för att säkerställa att ni är nöjda med hela processen. Vi håller oss ständigt uppdaterade om de senaste funktionerna inom batteriteknik och nya ekonomiska möjligheter. Ni får tydlig information om både möjligheter och begränsningar när ni ska välja rätt batteri. Dessutom får ni en ordentlig genomgång av systemets applikation, så att ni enkelt kan följa utvecklingen och se hur ert system presterar.
           <br /> <br />
@@ -27,7 +28,7 @@ export default function AboutPage() {
         </div>
 
         {/* Horizontal Line */}
-        <motion.hr className="border-t-1 border-darkNature mb-16" {...defaultTextFadeIn} />
+        <hr className="border-t-1 border-darkNature mb-16" />
 
         {/* Use the New ThreeCardsLayout Component */}
         <ThreeCardsLayout
@@ -66,24 +67,24 @@ export default function AboutPage() {
         />
 
         {/* Horizontal Line */}
-        <motion.hr className="border-t-1 border-darkNature mb-12" {...defaultTextFadeIn} />
+        <hr className="border-t-1 border-darkNature mb-12" />
 
         {/* Final Call-to-Action Section */}
         <div className="text-center">
           <motion.div
             className="text-3xl xl:text-4xl font-semibold text-darkNature mb-4"
-            {...headerTextFadeIn}
+            {...textFadeIn}
           >
             Låt oss hjälpa er på vägen mot en effektivare energilösning!
           </motion.div>
           <motion.div
-            className="text-base sm:text-lg text-darkNature leading-7 max-w-3xl mx-auto"
-            {...defaultTextFadeIn}
+            className="text-base sm:text-lg text-darkNature leading-7 max-w-4xl mx-auto"
+            {...textFadeIn}
           >
             Vårt team är redo att svara på era frågor och guida er genom processen – från första konsultationstillfället till färdig installation. Kontakta oss idag för att ta nästa steg mot en skräddarsydd batterilösning som passar just era behov.
           </motion.div>
         </div>
-      </div>
+      </ContainerWrapper>
     </section>
   );
 }
