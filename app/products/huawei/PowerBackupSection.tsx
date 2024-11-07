@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from 'react';
+import ContainerWrapper from '@/components/Wrapper/ContainerWrapper';
+import { motion } from 'framer-motion';
+import { textFadeIn } from '@/components/utils/animations';
 
 const PowerBackupSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,74 +31,56 @@ const PowerBackupSection: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-cover bg-center py-16" style={{ backgroundImage: `url('/images/products/huawei/scheme_f_3d.png')` }}>
-      {/* Container for Content */}
-      <div className="relative z-10 container mx-auto px-2 lg:px-4 xl:px-6 text-white">
+    <section
+      className="relative bg-cover bg-center py-16"
+      style={{ backgroundImage: `url('/images/products/huawei/scheme_f_3d.png')` }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-30" />
+      <ContainerWrapper>
         {/* Header Section */}
-        <div className="mb-8 xl:text-left text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#e9ff66] mb-2">
+        <motion.div className="text-center xl:text-left text-white mb-12" {...textFadeIn}>
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-[#e9ff66] mb-4">
             Har strömmen gått? Inga problem!
           </h2>
-          <p className="text-base lg:text-lg max-w-4xl mx-auto xl:mx-0 w-4/5 lg:w-3/5">
+          <p className="text-base lg:text-lg max-w-4xl mx-auto xl:mx-0">
             Med Back Up Box har du som batteriägare möjlighet att använda din lagrade energi i hemmet under ett strömavbrott.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Box Section for Viewports > 1280px */}
-        <div className="hidden xl:flex flex-col xl:flex-row justify-center items-start gap-4 lg:gap-6">
-          {/* Box 1 */}
-          <div className="flex flex-col items-start w-full xl:w-1/4 px-2 py-2 lg:py-4">
-            <h3 className="text-2xl font-bold mb-1 text-[#e9ff66]">Upptäckt av strömavbrott</h3>
-            <p className="text-base lg:text-lg">{boxes[0].content}</p>
-          </div>
+        {/* Desktop View */}
+        <motion.div
+          className="hidden xl:flex justify-between items-start gap-6 text-white"
+          {...textFadeIn}
+        >
+          {boxes.map((box, index) => (
+            <div key={index} className="flex flex-col items-start w-1/4">
+              <h3 className="text-xl font-bold text-[#e9ff66] mb-2">{box.title}</h3>
+              <p className="text-base">{box.content}</p>
+            </div>
+          ))}
+        </motion.div>
 
-          {/* Arrow 1 */}
-          <div className="hidden xl:flex items-center justify-center text-3xl lg:text-4xl text-[#e9ff66]">→</div>
-
-          {/* Box 2 */}
-          <div className="flex flex-col items-start w-full xl:w-1/4 px-2 py-2 lg:py-4">
-            <h3 className="text-xl font-bold mb-1 text-[#e9ff66]">Växling till fristående läge</h3>
-            <p className="text-base">{boxes[1].content}</p>
-          </div>
-
-          {/* Arrow 2 */}
-          <div className="hidden xl:flex items-center justify-center text-3xl lg:text-4xl text-[#e9ff66]">→</div>
-
-          {/* Box 3 */}
-          <div className="flex flex-col items-start w-full xl:w-1/4 px-2 py-2 lg:py-4">
-            <h3 className="text-xl font-bold mb-1 text-[#e9ff66]">Strömförsörjning under avbrott</h3>
-            <p className="text-base">{boxes[2].content}</p>
-          </div>
-
-          {/* Arrow 3 */}
-          <div className="hidden xl:flex items-center justify-center text-3xl lg:text-4xl text-[#e9ff66]">→</div>
-
-          {/* Box 4 */}
-          <div className="flex flex-col items-start w-full xl:w-1/4 px-2 py-2 lg:py-4">
-            <h3 className="text-xl font-bold mb-1 text-[#e9ff66]">Återgång till nätanslutet läge</h3>
-            <p className="text-base">{boxes[3].content}</p>
-          </div>
-        </div>
-
-        {/* Mobile/Tablet Carousel */}
-        <div className="xl:hidden">
-          <div className="flex flex-col items-center w-full px-2 py-2 lg:py-4 text-center max-w-2/3 mx-auto">
-            <h3 className="text-xl font-bold mb-1 text-[#e9ff66]">{boxes[currentIndex].title}</h3>
+        {/* Mobile/Tablet View */}
+        <motion.div className="xl:hidden text-center text-white" {...textFadeIn}>
+          <div className="flex flex-col items-center w-full px-4 py-4">
+            <h3 className="text-xl font-bold text-[#e9ff66] mb-2">
+              {boxes[currentIndex].title}
+            </h3>
             <p className="text-base max-w-xl mx-auto">{boxes[currentIndex].content}</p>
           </div>
-
-          {/* Dot Navigation */}
           <div className="flex justify-center mt-4">
             {boxes.map((_, index) => (
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 mx-1 rounded-full ${currentIndex === index ? 'bg-[#e9ff66]' : 'bg-gray-400'}`}
+                className={`w-3 h-3 mx-1 rounded-full ${
+                  currentIndex === index ? 'bg-[#e9ff66]' : 'bg-gray-400'
+                }`}
               />
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </ContainerWrapper>
     </section>
   );
 };

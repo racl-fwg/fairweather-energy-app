@@ -1,21 +1,24 @@
 "use client";
-import React from 'react';
-import ImageTextCardWithSteps from '@/components/ImageTextCard/ImageTextCardWithSteps';
-import { motion } from 'framer-motion'; // Import for the animation
-import { defaultTextFadeIn } from '@/components/utils/animations';
+import React from "react";
+import ImageTextCardWithSteps from "@/components/ImageTextCard/ImageTextCardWithSteps";
+import { motion } from "framer-motion"; 
+import { textFadeIn } from "@/components/utils/animations";
+import ContainerWrapper from "@/components/Wrapper/ContainerWrapper";
 
 const Benefits: React.FC = () => {
   return (
     <section className="py-16 bg-lightNeon">
-      <div className="max-w-[1200px] mx-auto space-y-8 px-6 lg:px-12">
-
+      <ContainerWrapper>
         {/* Horizontal Line */}
-        <hr className="border-t-1 border-darkNature mb-12" />
+        <motion.hr
+          className="border-t-1 border-darkNature mb-12"
+          {...textFadeIn}
+        />
 
         {/* Flex container for header and subheader with motion */}
-        <motion.div 
-          className="flex flex-col lg:flex-row justify-between items-start space-y-4 lg:space-y-0 lg:space-x-12 mb-12" 
-          {...defaultTextFadeIn}
+        <motion.div
+          className="flex flex-col lg:flex-row justify-between items-start space-y-4 lg:space-y-0 lg:space-x-12 mb-12"
+          {...textFadeIn}
         >
           {/* Header on the Left */}
           <div className="lg:w-1/3">
@@ -64,7 +67,7 @@ const Benefits: React.FC = () => {
           ]}
           className="bg-lightNeon"
         />
-      </div>
+      </ContainerWrapper>
     </section>
   );
 };

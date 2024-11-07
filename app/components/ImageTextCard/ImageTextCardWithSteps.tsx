@@ -1,8 +1,8 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { textFadeIn } from "@/components/utils/animations";
 
 type ImageTextCardWithStepsProps = {
   title: string;
@@ -30,7 +30,9 @@ const ImageTextCardWithSteps: React.FC<ImageTextCardWithStepsProps> = ({
   return (
     <section className={`py-16 ${className}`}>
       <div
-        className={`max-w-[1200px] mx-auto bg-white p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row ${imagePosition === "left" ? "lg:flex-row-reverse" : ""} items-stretch gap-8`}
+        className={`max-w-[1200px] mx-auto bg-white p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row ${
+          imagePosition === "left" ? "lg:flex-row-reverse" : ""
+        } items-stretch gap-8`}
       >
         {/* Image Container */}
         <div className="flex-1 relative">
@@ -39,25 +41,29 @@ const ImageTextCardWithSteps: React.FC<ImageTextCardWithStepsProps> = ({
             alt={imageAlt}
             width={680}
             height={680}
-            className="object-cover rounded-2xl h-full w-full"
+            className="object-fit rounded-2xl h-full w-full"
           />
-          {/* Ensure the button stays fixed at the bottom-left of the image */}
+          {/* Button Overlay */}
           {buttonOverlayContent && (
-            <div className="absolute bottom-0 left-0 m-4">
+            <motion.div
+              className={`absolute bottom-0 ${
+                buttonPosition === "right" ? "right-0" : "left-0"
+              } m-4`}
+              {...textFadeIn}
+            >
               {buttonOverlayContent}
-            </div>
+            </motion.div>
           )}
         </div>
 
         {/* Text Content */}
-        <div className="flex-1 flex flex-col justify-between space-y-4 px-0 lg:px-0 sm:px-[5%]">
-          <motion.div className="space-y-4">
-            <motion.h2 className="text-3xl md:text-4xl text-[#003317] font-semibold" {...headerTextFadeIn}>
-              {title}
-            </motion.h2>
-            <motion.p className="text-base md:text-lg text-black" {...defaultTextFadeIn}>
-              {description}
-            </motion.p>
+        <motion.div
+          className="flex-1 flex flex-col justify-between space-y-4 px-0 lg:px-0 sm:px-[5%]"
+          {...textFadeIn}
+        >
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl text-darkNature font-semibold">{title}</h2>
+            <p className="text-base md:text-lg text-black">{description}</p>
 
             {subSections && (
               <div className="space-y-6">
@@ -79,19 +85,15 @@ const ImageTextCardWithSteps: React.FC<ImageTextCardWithStepsProps> = ({
                       )}
                     </div>
                     <div>
-                      <motion.h3 className="text-lg md:text-xl text-[#003317] font-semibold" {...headerTextFadeIn}>
-                        {section.heading}
-                      </motion.h3>
-                      <motion.p className="text-sm md:text-base text-black" {...defaultTextFadeIn}>
-                        {section.content}
-                      </motion.p>
+                      <h3 className="text-lg md:text-xl text-darkNature font-semibold">{section.heading}</h3>
+                      <p className="text-sm md:text-base text-black">{section.content}</p>
                     </div>
                   </div>
                 ))}
               </div>
             )}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

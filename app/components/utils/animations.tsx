@@ -59,23 +59,6 @@ export const textFadeIn = {
   transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }, // Smooth cubic-bezier
 };
 
-
-// Wrapper for reusable motion configurations for body text
-export const defaultTextFadeIn = {
-  initial: "hidden",
-  whileInView: "visible",
-  variants: animations.textSlideFadeIn,
-  transition: { duration: 0.9, ease: 'easeOut' },
-};
-
-// Wrapper for header text animation
-export const headerTextFadeIn = {
-  initial: "hidden",
-  whileInView: "visible",
-  variants: animations.headerTextFadeIn,
-  transition: { duration: 0.9, ease: 'easeOut' },
-};
-
 // Wrapper for card animations
 export const cardAnimation = (delay: number) => ({
   initial: "hidden",

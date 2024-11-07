@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import ServiceCards, { Card } from "@/components/ServiceCards/ServiceCards";
 import { motion } from "framer-motion";
-import { textFadeIn} from "@/components/utils/animations";
+import { textFadeIn } from "@/components/utils/animations";
 import ContainerWrapper from "@/components/Wrapper/ContainerWrapper";
 
 export default function Services() {
@@ -36,7 +36,7 @@ export default function Services() {
 
   return (
     <section className="py-16 bg-lightNeon">
-        <ContainerWrapper>
+      <ContainerWrapper>
         {/* Service Cards Section */}
         <ServiceCards cards={cards} />
 
@@ -46,11 +46,24 @@ export default function Services() {
         {/* New Graphic Section with Animations */}
         <motion.div className="text-center mt-24 mb-12" {...textFadeIn}>
           {/* Heading and Description Above the Graphic */}
-          <motion.h2 className="text-3xl font-semibold text-nature mb-4" {...textFadeIn}>
+          <motion.h2
+            className="text-3xl font-semibold text-nature mb-4"
+            {...textFadeIn}
+          >
             Solceller är inte ett måste!
           </motion.h2>
-          <motion.p className="text-darkNature text-lg mb-8" {...textFadeIn}>
-            Ett batteri kan användas för mer än bara att lagra solenergi. Det kan också fungera som en reservkraftkälla, vilket säkerställer att viktiga apparater och system fortsätter att fungera under strömavbrott. Batterier kan också hjälpa till att optimera energiförbrukningen genom att ladda vid låg elpriskostnad och användas när priserna är höga, en process som kallas arbitrage. Dessutom kan de delta i frekvensreglering och bidra till att balansera elnätet, särskilt i tider av hög belastning.
+          <motion.p
+            className="text-darkNature text-lg mb-8"
+            {...textFadeIn}
+          >
+            Ett batteri kan användas för mer än bara att lagra solenergi. Det kan
+            också fungera som en reservkraftkälla, vilket säkerställer att
+            viktiga apparater och system fortsätter att fungera under
+            strömavbrott. Batterier kan också hjälpa till att optimera
+            energiförbrukningen genom att ladda vid låg elpriskostnad och
+            användas när priserna är höga, en process som kallas arbitrage.
+            Dessutom kan de delta i frekvensreglering och bidra till att
+            balansera elnätet, särskilt i tider av hög belastning.
           </motion.p>
 
           {/* Graphic Image */}
@@ -64,7 +77,7 @@ export default function Services() {
             />
           </motion.div>
         </motion.div>
-        </ContainerWrapper>
+      </ContainerWrapper>
     </section>
   );
 }

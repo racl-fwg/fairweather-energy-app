@@ -1,32 +1,35 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { textFadeIn } from '@/components/utils/animations';
-import ContainerWrapper from '../Wrapper/ContainerWrapper';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { textFadeIn } from "@/components/utils/animations";
+import ContainerWrapper from "../Wrapper/ContainerWrapper";
 
 // Define the prop types for each testimonial
 type Testimonial = {
-  name: string;         // Customer name
-  testimonial: string;  // Testimonial content
+  name: string; // Customer name
+  testimonial: string; // Testimonial content
 };
 
 // Define prop types for the TestimonialsCarousel component
 type TestimonialsCarouselProps = {
   testimonials: Testimonial[]; // Array of testimonials
-  title: string;               // Section title
-  description: string;         // Section description
+  title: string; // Section title
+  description: string; // Section description
 };
 
-const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonials, title, description }) => {
+const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
+  testimonials,
+  title,
+  description,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(4); // Default to showing 4 items (lg screens)
-  
+  const [visibleCount, setVisibleCount] = useState(4); // Default to showing 4 items on large screens
+
   // State to handle hover effect for navigation buttons
   const [prevHover, setPrevHover] = useState(false);
   const [nextHover, setNextHover] = useState(false);
 
-  // Calculate the number of testimonials
   const lastIndex = testimonials.length;
 
   // Update the visible count based on the viewport size
@@ -41,13 +44,10 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
       }
     };
 
-    // Call on mount and when the window is resized
-    updateVisibleCount();
-    window.addEventListener('resize', updateVisibleCount);
+    updateVisibleCount(); // Call on component mount
+    window.addEventListener("resize", updateVisibleCount);
 
-    return () => {
-      window.removeEventListener('resize', updateVisibleCount);
-    };
+    return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
   const nextSlide = () => {
@@ -68,27 +68,32 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
 
   return (
     <section className="py-16 bg-lightNeon">
-        <ContainerWrapper>
+      <ContainerWrapper>
         {/* Horizontal Line */}
-        <hr className="border-t-1 border-darkNature mb-16" />
+        <motion.hr
+          className="border-t-1 border-darkNature mb-16"
+          {...textFadeIn}
+        />
 
-        {/* Header Section - 2 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* Header Section */}
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16" {...textFadeIn}>
           {/* Title */}
-          <motion.div {...textFadeIn}>
-            <h2 className="text-darkNature text-4xl font-bold text-center md:text-left">{title}</h2>
-          </motion.div>
+          <h2 className="text-darkNature text-4xl font-bold text-center md:text-left">
+            {title}
+          </h2>
           {/* Description */}
-          <motion.div {...textFadeIn}>
-            <p className="text-darkNature text-base md:text-lg xl:text-xl text-center md:text-right">{description}</p>
-          </motion.div>
-        </div>
+          <p className="text-darkNature text-base md:text-lg xl:text-xl text-center md:text-right">
+            {description}
+          </p>
+        </motion.div>
 
         {/* Testimonials Carousel */}
         <div className="relative">
           {/* Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Map through visible testimonials */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            {...textFadeIn}
+          >
             {visibleTestimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -106,7 +111,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
                 </p>
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Carousel Navigation */}
           <div className="flex justify-end mt-8">
@@ -118,7 +123,11 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
             >
               <span className="sr-only">Föregående</span>
               <Image
-                src={prevHover ? "/icons/Arrow_in_filled_circle_nature.png" : "/icons/Arrow_in_circle_green.png"}
+                src={
+                  prevHover
+                    ? "/icons/Arrow_in_filled_circle_nature.png"
+                    : "/icons/Arrow_in_circle_green.png"
+                }
                 alt="Föregående"
                 width={42}
                 height={42}
@@ -133,7 +142,11 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
             >
               <span className="sr-only">Nästa</span>
               <Image
-                src={nextHover ? "/icons/Arrow_in_filled_circle_nature.png" : "/icons/Arrow_in_circle_green.png"}
+                src={
+                  nextHover
+                    ? "/icons/Arrow_in_filled_circle_nature.png"
+                    : "/icons/Arrow_in_circle_green.png"
+                }
                 alt="Nästa"
                 width={42}
                 height={42}
