@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion"; // Import motion for animations
-import { defaultTextFadeIn, headerTextFadeIn } from "@/components/utils/animations"; // Import animations
+import { textFadeIn } from "@/components/utils/animations"; // Import animations
 import ArrowButton from "@/components/Buttons/ArrowButton";
 import ContainerWrapper from "@/components/Wrapper/ContainerWrapper"; // Import ContainerWrapper
 
@@ -13,7 +13,7 @@ const PixiiAbout: React.FC = () => {
         {/* Header with animation */}
         <motion.h2
           className="text-3xl sm:text-4xl font-semibold text-nature mb-8 text-center"
-          {...headerTextFadeIn} // Applying the header animation
+          {...textFadeIn} // Applying the header animation
         >
           Vilka är Pixii?
         </motion.h2>
@@ -21,7 +21,7 @@ const PixiiAbout: React.FC = () => {
         {/* Description with animation */}
         <motion.p
           className="text-lg sm:text-xl text-darkNature leading-relaxed max-w-[900px] mx-auto mb-8 text-center"
-          {...defaultTextFadeIn} // Applying the text slide fade animation
+          {...textFadeIn} // Applying the text slide fade animation
         >
           Pixii är en ledande aktör inom energilagringssystem och erbjuder flexibla
           lösningar för både hem och kommersiella tillämpningar. Med Pixiis innovativa
