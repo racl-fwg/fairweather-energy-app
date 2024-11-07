@@ -8,7 +8,7 @@ export default function HelpSection() {
       style={{ backgroundImage: "url('/images/Fairweather_Energy_Graphics_3D_Nature_RGB.png')" }}
     >
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-darkNature to-transparent opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-darkNature to-transparent opacity-100"></div>
 
       {/* Content Container */}
       <div className="relative text-center max-w-2xl px-4">
@@ -18,7 +18,7 @@ export default function HelpSection() {
         </h2>
 
         {/* Section Description */}
-        <p className="text-white text-base sm:text-xl leading-relaxed mb-8">
+        <p className="text-lightNeon text-base sm:text-xl leading-relaxed mb-8">
           Energimarknaden kan kännas som en djungel, men vi finns här för att guida dig rätt. 
           Vi hjälper dig att välja det bästa systemet för dina unika förutsättningar. 
           Kontakta oss så ser vi till att du får den lösning som passar dig bäst!

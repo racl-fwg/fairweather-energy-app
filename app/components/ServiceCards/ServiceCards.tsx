@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ArrowButton from '@/components/Buttons/ArrowButton';
 import QuoteButton from '@/components/Buttons/QuoteButton';
 
-type Card = {
+export type Card = {
   imageSrc: string;      // Image path for the card
   title: string;         // Card title
   description: string;   // Card description
@@ -25,7 +25,7 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ cards }) => {
       {cards.map((card, index) => (
         <div
           key={index}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden text-center p-6 flex flex-col items-center"
+          className="bg-white rounded-2xl shadow-lg overflow-hidden text-center p-6 flex flex-col items-center transition-transform hover:scale-105"
         >
           {/* Card Image */}
           <Image

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { headerTextFadeIn, defaultTextFadeIn } from '@/components/utils/animations';
+import { textFadeIn } from '@/components/utils/animations';
+import ContainerWrapper from '../Wrapper/ContainerWrapper';
 
 // Define the prop types for each testimonial
 type Testimonial = {
@@ -67,18 +68,18 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
 
   return (
     <section className="py-16 bg-lightNeon">
-      <div className="container mx-auto px-4">
+        <ContainerWrapper>
         {/* Horizontal Line */}
-        <motion.hr className="border-t-1 border-darkNature mb-16" {...defaultTextFadeIn} />
+        <hr className="border-t-1 border-darkNature mb-16" />
 
         {/* Header Section - 2 Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Title */}
-          <motion.div {...headerTextFadeIn}>
+          <motion.div {...textFadeIn}>
             <h2 className="text-darkNature text-4xl font-bold text-center md:text-left">{title}</h2>
           </motion.div>
           {/* Description */}
-          <motion.div {...defaultTextFadeIn}>
+          <motion.div {...textFadeIn}>
             <p className="text-darkNature text-base md:text-lg xl:text-xl text-center md:text-right">{description}</p>
           </motion.div>
         </div>
@@ -140,7 +141,7 @@ const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({ testimonial
             </button>
           </div>
         </div>
-      </div>
+      </ContainerWrapper>
     </section>
   );
 };

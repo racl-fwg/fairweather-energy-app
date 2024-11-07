@@ -45,6 +45,21 @@ export const animations = {
   },
 };
 
+// framer-motion variants for fade-in-only animation
+export const fadeInOnly = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+// Wrapper configuration for fade-in
+export const textFadeIn = {
+  initial: "hidden",
+  whileInView: "visible",
+  variants: fadeInOnly,
+  transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }, // Smooth cubic-bezier
+};
+
+
 // Wrapper for reusable motion configurations for body text
 export const defaultTextFadeIn = {
   initial: "hidden",
