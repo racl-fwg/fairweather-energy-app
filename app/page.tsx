@@ -11,6 +11,7 @@ export const metadata = {
   title: 'Fairweather Energy | Sustainable Energy Solutions for a Better Future',
   description: 'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet. Learn more about our services today.',
   openGraph: {
+    siteName: 'Fairweather Energy',
     title: 'Fairweather Energy | Sustainable Energy Solutions for a Better Future',
     description: 'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet. Learn more about our services today.',
     url: 'https://fairweather.energy',
