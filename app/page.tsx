@@ -8,12 +8,12 @@ import Contact from './components/Contact/Contact';
 import React from 'react';
 
 export const metadata = {
-  title: 'Fairweather Energy | Sustainable Energy Solutions for a Better Future',
-  description: 'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet. Learn more about our services today.',
+  title: 'Fairweather Energy | Sustainable Energy Solutions',
+  description: 'Fairweather Energy erbjuder avancerade energilagringslösningar för hem och företag. Upptäck innovativa batterier som optimerar energianvändning, minskar kostnader och stödjer elnätet',
   openGraph: {
     siteName: 'Fairweather Energy',
-    title: 'Fairweather Energy | Sustainable Energy Solutions for a Better Future',
-    description: 'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet. Learn more about our services today.',
+    title: 'Fairweather Energy | Sustainable Energy Solutions',
+    description: 'Fairweather Energy erbjuder avancerade energilagringslösningar för hem och företag. Upptäck innovativa batterier som optimerar energianvändning, minskar kostnader och stödjer elnätet',
     url: 'https://fairweather.energy',
     images: [
       {
@@ -26,8 +26,8 @@ export const metadata = {
   },  
   twitter: {
     card: 'summary_large_image',
-    title: 'Fairweather Energy | Sustainable Energy Solutions for a Better Future',
-    description: 'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet.',
+    title: 'Fairweather Energy | Sustainable Energy Solutions',
+    description: 'Fairweather Energy erbjuder avancerade energilagringslösningar för hem och företag. Upptäck innovativa batterier som optimerar energianvändning, minskar kostnader och stödjer elnätet',
     images: ['/images/og-image.jpg'],
   },
   alternates: {
@@ -52,7 +52,7 @@ export const metadata = {
         name: 'Fairweather Energy Homepage',
         url: 'https://fairweather.energy',
         description:
-          'Fairweather Energy offers innovative and sustainable energy solutions designed to meet your needs while protecting the planet.',
+          'Fairweather Energy erbjuder avancerade energilagringslösningar för hem och företag. Upptäck innovativa batterier som optimerar energianvändning, minskar kostnader och stödjer elnätet',
       }),
     },
   ],
